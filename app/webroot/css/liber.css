@@ -1,0 +1,91 @@
+/**
+ * Body
+ **/
+body {
+	color: #fff;
+	font-family:'lucida grande',verdana,helvetica,arial,sans-serif;
+	font-size:90%;
+	color: black;
+}
+body, div#error {
+	margin: 25px;
+}
+body, div.link {
+	background-color: #ff6600;
+}
+
+a {
+	color: blue;
+}
+a img {
+	border: 0;
+}
+a, div.people dt, ul.tree li {
+	font-weight: bold;
+}
+
+.form label, div.people dt {
+	width: 20%;
+}
+
+div#logo, div#flash h2, div.people h2 {
+	text-align: center;
+}
+
+div.people dt, div.people dd, ul.tree li{
+	line-height: 1.5em;
+}
+
+div.people dd{
+	margin: -1.5em 0 0 20%;
+}
+
+div.people dd a, ul.tree li{
+	margin: 0;
+}
+
+ul.tree, ul.tree ul, li { 
+	list-style-type: none; 
+	padding: 0; 
+}
+ul.tree ul, div.small, div.description { 
+	margin-left: 10px;
+}
+ul.tree li { 
+	padding: 0 12px; 
+	background: url(../img/node.png) no-repeat; 
+	color: #369; 
+}
+ul.tree li:last-child { 
+	background: #ff6600 url(../img/lastnode.png) no-repeat;
+	width: 100%; 
+}
+
+div.small {
+	padding-left: 5px;
+	font-size: 10px;
+	clear: left;
+}
+
+ul.tree, ul.tree ul, div.small {
+	background: url(../img/vline.png) repeat-y; 
+}
+
+div.small:last-child {
+	background-image: none;
+}
+
+.form label, div.person, div.link, div.description, ul.tree li:last-child {
+	float: left;
+}
+
+div.person {
+	background: url(../img/vline.png) repeat-y 10px; 
+	width: 100%;
+}
+div.link {
+	max-width: 20%;
+}
+div.description {
+	width: 80%;
+}

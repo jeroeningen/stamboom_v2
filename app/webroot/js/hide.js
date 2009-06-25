@@ -1,0 +1,1 @@
+Modalbox.hide({afterHide: function() { location.href = document.location; } });

@@ -1,0 +1,414 @@
+2009-04-25 00:19:28 Warning: Warning (512): Callback parentNode() not defined in User in [CORE\cake\libs\model\behaviors\acl.php, line 62]
+2009-04-25 00:40:59 Warning: Warning (512): Callback parentNode() not defined in User in [CORE\cake\libs\model\behaviors\acl.php, line 62]
+2009-04-25 00:48:35 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 2
+            [username] => admin
+            [created] => 2009-04-25 00:47:54
+            [modified] => 2009-04-25 00:47:54
+        )
+
+)
+
+Aco: controllers/Users/admin_index in [CORE\cake\libs\controller\components\acl.php, line 239]
+2009-04-25 00:48:35 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\stamboom_v2\cake\basics.php:111) in [CORE\cake\libs\controller\controller.php, line 640]
+2009-04-25 00:49:57 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 2
+            [username] => admin
+            [created] => 2009-04-25 00:47:54
+            [modified] => 2009-04-25 00:47:54
+        )
+
+)
+
+Aco: controllers/Users/index in [CORE\cake\libs\controller\components\acl.php, line 239]
+2009-04-25 00:49:57 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\stamboom_v2\cake\basics.php:111) in [CORE\cake\libs\controller\controller.php, line 640]
+2009-04-25 00:50:05 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 2
+            [username] => admin
+            [created] => 2009-04-25 00:47:54
+            [modified] => 2009-04-25 00:47:54
+        )
+
+)
+
+Aco: controllers/Users/index in [CORE\cake\libs\controller\components\acl.php, line 239]
+2009-04-25 00:50:05 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\stamboom_v2\cake\basics.php:111) in [CORE\cake\libs\controller\controller.php, line 640]
+2009-04-25 00:52:32 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 2
+            [username] => admin
+            [created] => 2009-04-25 00:47:54
+            [modified] => 2009-04-25 00:47:54
+        )
+
+)
+
+Aco: controllers/People/admin_index in [CORE\cake\libs\controller\components\acl.php, line 239]
+2009-04-25 00:52:32 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\stamboom_v2\cake\basics.php:111) in [CORE\cake\libs\controller\controller.php, line 640]
+2009-04-25 01:12:58 Warning: Warning (512): DbAcl::allow() - Invalid node in [CORE\cake\libs\controller\components\acl.php, line 325]
+2009-04-25 01:26:41 Warning: Warning (512): DbAcl::allow() - Invalid node in [CORE\cake\libs\controller\components\acl.php, line 325]
+2009-04-25 01:26:41 Warning: Warning (512): DbAcl::allow() - Invalid node in [CORE\cake\libs\controller\components\acl.php, line 325]
+2009-04-25 01:26:53 Warning: Warning (512): DbAcl::allow() - Invalid node in [CORE\cake\libs\controller\components\acl.php, line 325]
+2009-04-25 01:32:59 Warning: Warning (512): DbAcl::allow() - Invalid node in [CORE\cake\libs\controller\components\acl.php, line 325]
+2009-04-25 01:33:30 Warning: Warning (512): DbAcl::allow() - Invalid node in [CORE\cake\libs\controller\components\acl.php, line 325]
+2009-04-25 01:33:54 Warning: Warning (512): DbAcl::allow() - Invalid node in [CORE\cake\libs\controller\components\acl.php, line 325]
+2009-04-25 01:34:01 Warning: Warning (512): DbAcl::allow() - Invalid node in [CORE\cake\libs\controller\components\acl.php, line 325]
+2009-04-25 01:35:26 Warning: Warning (512): DbAcl::allow() - Invalid node in [CORE\cake\libs\controller\components\acl.php, line 325]
+2009-04-25 01:35:40 Warning: Warning (512): DbAcl::allow() - Invalid node in [CORE\cake\libs\controller\components\acl.php, line 325]
+2009-04-25 01:36:58 Warning: Warning (512): DbAcl::allow() - Invalid node in [CORE\cake\libs\controller\components\acl.php, line 325]
+2009-04-25 01:38:27 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => User
+    [Aro0.foreign_key] => 2
+)
+" in [CORE\cake\libs\model\db_acl.php, line 191]
+2009-04-25 01:38:27 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 2
+            [username] => admin
+            [created] => 2009-04-25 00:47:54
+            [modified] => 2009-04-25 00:47:54
+        )
+
+)
+
+Aco: Users/admin_edit in [CORE\cake\libs\controller\components\acl.php, line 239]
+2009-04-25 01:38:27 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\stamboom_v2\cake\basics.php:111) in [CORE\cake\libs\controller\controller.php, line 640]
+2009-04-25 01:39:00 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => User
+    [Aro0.foreign_key] => 2
+)
+" in [CORE\cake\libs\model\db_acl.php, line 191]
+2009-04-25 01:39:01 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 2
+            [username] => admin
+            [created] => 2009-04-25 00:47:54
+            [modified] => 2009-04-25 00:47:54
+        )
+
+)
+
+Aco: People/index in [CORE\cake\libs\controller\components\acl.php, line 239]
+2009-04-25 01:39:01 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\stamboom_v2\cake\basics.php:111) in [CORE\cake\libs\controller\controller.php, line 640]
+2009-04-25 01:39:06 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => User
+    [Aro0.foreign_key] => 2
+)
+" in [CORE\cake\libs\model\db_acl.php, line 191]
+2009-04-25 01:39:06 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 2
+            [username] => admin
+            [created] => 2009-04-25 00:47:54
+            [modified] => 2009-04-25 00:47:54
+        )
+
+)
+
+Aco: People/index in [CORE\cake\libs\controller\components\acl.php, line 239]
+2009-04-25 01:39:06 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\stamboom_v2\cake\basics.php:111) in [CORE\cake\libs\controller\controller.php, line 640]
+2009-04-25 16:08:51 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\stamboom_v2\cake\basics.php:312) in [CORE\cake\libs\controller\controller.php, line 640]
+2009-04-25 16:10:12 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\stamboom_v2\cake\basics.php:312) in [CORE\cake\libs\controller\controller.php, line 640]
+2009-04-25 16:10:49 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\stamboom_v2\cake\basics.php:312) in [CORE\cake\libs\controller\controller.php, line 640]
+2009-04-25 16:29:25 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\stamboom_v2\cake\basics.php:312) in [CORE\cake\libs\controller\controller.php, line 640]
+2009-04-25 16:30:42 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 3
+            [username] => admin
+            [created] => 2009-04-25 01:36:44
+            [modified] => 2009-04-25 01:36:44
+        )
+
+)
+
+Aco: Users/createAcl in [CORE\cake\libs\controller\components\acl.php, line 239]
+2009-04-25 16:30:42 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\stamboom_v2\cake\basics.php:111) in [CORE\cake\libs\controller\controller.php, line 640]
+2009-04-25 16:40:16 Warning: Warning (512): DbAcl::allow() - Invalid node in [CORE\cake\libs\controller\components\acl.php, line 325]
+2009-04-25 16:40:17 Warning: Warning (512): DbAcl::allow() - Invalid node in [CORE\cake\libs\controller\components\acl.php, line 325]
+2009-04-26 16:00:44 Warning: Warning (512): Method FormHelper::elements does not exist in [CORE\cake\libs\view\helper.php, line 143]
+2009-04-26 16:00:56 Warning: Warning (512): Method HtmlHelper::elements does not exist in [CORE\cake\libs\view\helper.php, line 143]
+2009-04-26 16:01:02 Warning: Warning (512): Method HtmlHelper::element does not exist in [CORE\cake\libs\view\helper.php, line 143]
+2009-04-26 16:36:46 Warning: Warning (512): <span style = "color:Red;text-align:left"><b>SQL Error:</b> 1048: Column 'parent_id' cannot be null</span> in [CORE\cake\libs\model\datasources\dbo_source.php, line 525]
+2009-04-26 18:36:58 Warning: Warning (2): array_combine() [<a href='http://php.net/function.array-combine'>function.array-combine</a>]: Both parameters should have an equal number of elements in [CORE\cake\libs\set.php, line 976]
+2009-04-26 18:37:44 Warning: Warning (2): array_combine() [<a href='http://php.net/function.array-combine'>function.array-combine</a>]: Both parameters should have an equal number of elements in [CORE\cake\libs\set.php, line 976]
+2009-04-26 18:57:27 Warning: Warning (512): Method HtmlHelper::element does not exist in [CORE\cake\libs\view\helper.php, line 143]
+2009-04-26 20:43:19 Warning: Warning (2): array_keys() [<a href='http://php.net/function.array-keys'>function.array-keys</a>]: The first argument should be an array in [CORE\cake\libs\view\view.php, line 317]
+2009-04-26 20:43:19 Warning: Warning (2): implode() [<a href='http://php.net/function.implode'>function.implode</a>]: Invalid arguments passed in [CORE\cake\libs\view\view.php, line 317]
+2009-04-26 20:43:19 Warning: Warning (2): array_merge_recursive() [<a href='http://php.net/function.array-merge-recursive'>function.array-merge-recursive</a>]: Argument #1 is not an array in [CORE\cake\libs\view\view.php, line 342]
+2009-04-26 20:43:19 Warning: Warning (2): array_merge() [<a href='http://php.net/function.array-merge'>function.array-merge</a>]: Argument #2 is not an array in [CORE\cake\libs\view\view.php, line 343]
+2009-04-26 20:43:19 Warning: Warning (2): extract() [<a href='http://php.net/function.extract'>function.extract</a>]: First argument should be an array in [CORE\cake\libs\view\view.php, line 658]
+2009-04-26 22:20:49 Warning: Warning (2): array_keys() [<a href='http://php.net/function.array-keys'>function.array-keys</a>]: The first argument should be an array in [CORE\cake\libs\view\view.php, line 317]
+2009-04-26 22:20:49 Warning: Warning (2): implode() [<a href='http://php.net/function.implode'>function.implode</a>]: Invalid arguments passed in [CORE\cake\libs\view\view.php, line 317]
+2009-04-26 22:20:49 Warning: Warning (2): array_merge_recursive() [<a href='http://php.net/function.array-merge-recursive'>function.array-merge-recursive</a>]: Argument #1 is not an array in [CORE\cake\libs\view\view.php, line 342]
+2009-04-26 22:20:49 Warning: Warning (2): array_merge() [<a href='http://php.net/function.array-merge'>function.array-merge</a>]: Argument #2 is not an array in [CORE\cake\libs\view\view.php, line 343]
+2009-04-26 22:20:49 Warning: Warning (2): extract() [<a href='http://php.net/function.extract'>function.extract</a>]: First argument should be an array in [CORE\cake\libs\view\view.php, line 658]
+2009-04-26 22:21:19 Warning: Warning (2): array_keys() [<a href='http://php.net/function.array-keys'>function.array-keys</a>]: The first argument should be an array in [CORE\cake\libs\view\view.php, line 317]
+2009-04-26 22:21:19 Warning: Warning (2): implode() [<a href='http://php.net/function.implode'>function.implode</a>]: Invalid arguments passed in [CORE\cake\libs\view\view.php, line 317]
+2009-04-26 22:21:19 Warning: Warning (2): array_merge_recursive() [<a href='http://php.net/function.array-merge-recursive'>function.array-merge-recursive</a>]: Argument #1 is not an array in [CORE\cake\libs\view\view.php, line 342]
+2009-04-26 22:21:19 Warning: Warning (2): array_merge() [<a href='http://php.net/function.array-merge'>function.array-merge</a>]: Argument #2 is not an array in [CORE\cake\libs\view\view.php, line 343]
+2009-04-26 22:21:19 Warning: Warning (2): extract() [<a href='http://php.net/function.extract'>function.extract</a>]: First argument should be an array in [CORE\cake\libs\view\view.php, line 658]
+2009-05-01 23:18:24 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 3
+            [username] => admin
+            [created] => 2009-04-25 01:36:44
+            [modified] => 2009-04-25 01:36:44
+        )
+
+)
+
+Aco: Profiles/index in [CORE\cake\libs\controller\components\acl.php, line 239]
+2009-05-01 23:18:24 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\stamboom_v2\cake\basics.php:111) in [CORE\cake\libs\controller\controller.php, line 640]
+2009-05-01 23:19:28 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 3
+            [username] => admin
+            [created] => 2009-04-25 01:36:44
+            [modified] => 2009-04-25 01:36:44
+        )
+
+)
+
+Aco: Profiles/index in [CORE\cake\libs\controller\components\acl.php, line 239]
+2009-05-01 23:19:28 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\stamboom_v2\cake\basics.php:111) in [CORE\cake\libs\controller\controller.php, line 640]
+2009-05-02 00:07:20 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\stamboom_v2\cake\basics.php:111) in [CORE\cake\libs\controller\controller.php, line 640]
+2009-05-02 00:07:57 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\stamboom_v2\cake\basics.php:111) in [CORE\cake\libs\controller\controller.php, line 640]
+2009-05-02 00:08:11 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\stamboom_v2\cake\basics.php:111) in [CORE\cake\libs\controller\controller.php, line 640]
+2009-05-02 00:09:20 Warning: Warning (512): <span style = "color:Red;text-align:left"><b>SQL Error:</b> 1054: Unknown column 'Array' in 'field list'</span> in [CORE\cake\libs\model\datasources\dbo_source.php, line 525]
+2009-05-02 00:39:53 Warning: Warning (2): unlink(img/people/small/P) [<a href='http://php.net/function.unlink'>function.unlink</a>]: No such file or directory in [APP\app_controller.php, line 74]
+2009-05-02 00:39:53 Warning: Warning (2): unlink(img/people/big/P) [<a href='http://php.net/function.unlink'>function.unlink</a>]: No such file or directory in [APP\app_controller.php, line 75]
+2009-05-02 00:39:53 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\stamboom_v2\cake\basics.php:111) in [CORE\cake\libs\controller\controller.php, line 640]
+2009-05-02 00:44:23 Warning: Warning (2): unlink(img/people/small/) [<a href='http://php.net/function.unlink'>function.unlink</a>]: Permission denied in [APP\app_controller.php, line 74]
+2009-05-02 00:44:23 Warning: Warning (2): unlink(img/people/big/) [<a href='http://php.net/function.unlink'>function.unlink</a>]: Permission denied in [APP\app_controller.php, line 75]
+2009-05-02 00:44:23 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\stamboom_v2\cake\basics.php:111) in [CORE\cake\libs\controller\controller.php, line 640]
+2009-05-02 01:07:35 Warning: Warning (512): <span style = "color:Red;text-align:left"><b>SQL Error:</b> 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'findPersonParentChilds' at line 1</span> in [CORE\cake\libs\model\datasources\dbo_source.php, line 525]
+2009-05-02 01:07:36 Warning: Warning (512): <span style = "color:Red;text-align:left"><b>SQL Error:</b> 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'findPersonParentChilds' at line 1</span> in [CORE\cake\libs\model\datasources\dbo_source.php, line 525]
+2009-05-02 01:18:32 Warning: Warning (512): <span style = "color:Red;text-align:left"><b>SQL Error:</b> 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'findPersonAndParent' at line 1</span> in [CORE\cake\libs\model\datasources\dbo_source.php, line 525]
+2009-05-02 01:18:32 Warning: Warning (2): Invalid argument supplied for foreach() in [APP\views\elements\person\view.ctp, line 49]
+2009-05-02 01:18:33 Warning: Warning (512): <span style = "color:Red;text-align:left"><b>SQL Error:</b> 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'findPersonAndParent' at line 1</span> in [CORE\cake\libs\model\datasources\dbo_source.php, line 525]
+2009-05-02 01:18:33 Warning: Warning (2): Invalid argument supplied for foreach() in [APP\views\elements\person\view.ctp, line 49]
+2009-05-03 18:49:31 Warning: Warning (2): unlink(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_aros) [<a href='http://php.net/function.unlink'>function.unlink</a>]: No such file or directory in [CORE\cake\libs\file.php, line 292]
+2009-05-03 18:49:32 Warning: Warning (2): unlink(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_aros) [<a href='http://php.net/function.unlink'>function.unlink</a>]: Permission denied in [CORE\cake\libs\file.php, line 292]
+2009-05-03 18:49:32 Warning: Warning (2): fopen(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_aros_acos) [<a href='http://php.net/function.fopen'>function.fopen</a>]: failed to open stream: Permission denied in [CORE\cake\libs\file.php, line 156]
+2009-05-03 18:49:32 Warning: Warning (2): fopen(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_people) [<a href='http://php.net/function.fopen'>function.fopen</a>]: failed to open stream: No such file or directory in [CORE\cake\libs\file.php, line 156]
+2009-05-03 18:49:32 Warning: Warning (2): unlink(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\persistent\cake_core_core_paths) [<a href='http://php.net/function.unlink'>function.unlink</a>]: Permission denied in [CORE\cake\libs\file.php, line 292]
+2009-05-03 21:56:05 Warning: Warning (512): <span style = "color:Red;text-align:left"><b>SQL Error:</b> 1048: Column 'died' cannot be null</span> in [CORE\cake\libs\model\datasources\dbo_source.php, line 525]
+2009-05-03 22:27:39 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 3
+            [username] => admin
+            [created] => 2009-04-25 01:36:44
+            [modified] => 2009-05-03 01:41:34
+        )
+
+)
+
+Aco: People/admin_upload in [CORE\cake\libs\controller\components\acl.php, line 239]
+2009-05-03 22:27:39 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\stamboom_v2\cake\basics.php:111) in [CORE\cake\libs\controller\controller.php, line 640]
+2009-05-03 23:13:20 Warning: Warning (512): Method HtmlHelper::file does not exist in [CORE\cake\libs\view\helper.php, line 143]
+2009-05-03 23:13:22 Warning: Warning (512): Method HtmlHelper::file does not exist in [CORE\cake\libs\view\helper.php, line 143]
+2009-05-03 23:13:22 Warning: Warning (512): Method HtmlHelper::file does not exist in [CORE\cake\libs\view\helper.php, line 143]
+2009-05-03 23:13:40 Warning: Warning (512): Method HtmlHelper::file does not exist in [CORE\cake\libs\view\helper.php, line 143]
+2009-05-03 23:13:42 Warning: Warning (512): Method HtmlHelper::file does not exist in [CORE\cake\libs\view\helper.php, line 143]
+2009-05-03 23:13:42 Warning: Warning (512): Method HtmlHelper::file does not exist in [CORE\cake\libs\view\helper.php, line 143]
+2009-05-03 23:13:55 Warning: Warning (512): Method HtmlHelper::file does not exist in [CORE\cake\libs\view\helper.php, line 143]
+2009-05-03 23:13:57 Warning: Warning (512): Method HtmlHelper::file does not exist in [CORE\cake\libs\view\helper.php, line 143]
+2009-05-03 23:13:57 Warning: Warning (512): Method HtmlHelper::file does not exist in [CORE\cake\libs\view\helper.php, line 143]
+2009-05-05 19:53:55 Warning: Warning (2): unlink(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_aros_acos) [<a href='http://php.net/function.unlink'>function.unlink</a>]: No such file or directory in [CORE\cake\libs\file.php, line 292]
+2009-05-05 21:46:52 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 3
+            [username] => admin
+            [created] => 2009-04-25 01:36:44
+            [modified] => 2009-05-03 01:41:34
+        )
+
+)
+
+Aco: People/admin_picture_delete in [CORE\cake\libs\controller\components\acl.php, line 239]
+2009-05-05 21:46:52 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\stamboom_v2\cake\basics.php:111) in [CORE\cake\libs\controller\controller.php, line 640]
+2009-05-05 21:57:25 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\stamboom_v2\cake\basics.php:111) in [CORE\cake\libs\controller\controller.php, line 640]
+2009-05-05 21:57:50 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\stamboom_v2\cake\basics.php:312) in [CORE\cake\libs\controller\controller.php, line 640]
+2009-05-05 22:42:22 Warning: Warning (2): mysql_connect() [<a href='http://php.net/function.mysql-connect'>function.mysql-connect</a>]: Access denied for user 'stamboomuser'@'localhost' (using password: YES) in [CORE\cake\libs\model\datasources\dbo\dbo_mysql.php, line 374]
+2009-05-05 22:42:22 Warning: Warning (2): mysql_select_db(): supplied argument is not a valid MySQL-Link resource in [CORE\cake\libs\model\datasources\dbo\dbo_mysql.php, line 379]
+2009-05-05 22:42:22 Warning: Warning (2): mysql_get_server_info(): supplied argument is not a valid MySQL-Link resource in [CORE\cake\libs\model\datasources\dbo\dbo_mysql.php, line 387]
+2009-05-05 22:42:22 Warning: Warning (2): mysql_query(): supplied argument is not a valid MySQL-Link resource in [CORE\cake\libs\model\datasources\dbo\dbo_mysql.php, line 411]
+2009-05-05 22:42:23 Warning: Warning (2): mysql_connect() [<a href='http://php.net/function.mysql-connect'>function.mysql-connect</a>]: Access denied for user 'stamboomuser'@'localhost' (using password: YES) in [CORE\cake\libs\model\datasources\dbo\dbo_mysql.php, line 374]
+2009-05-05 22:42:23 Warning: Warning (2): mysql_select_db(): supplied argument is not a valid MySQL-Link resource in [CORE\cake\libs\model\datasources\dbo\dbo_mysql.php, line 379]
+2009-05-05 22:42:23 Warning: Warning (2): mysql_get_server_info(): supplied argument is not a valid MySQL-Link resource in [CORE\cake\libs\model\datasources\dbo\dbo_mysql.php, line 387]
+2009-05-05 22:42:23 Warning: Warning (2): mysql_query(): supplied argument is not a valid MySQL-Link resource in [CORE\cake\libs\model\datasources\dbo\dbo_mysql.php, line 411]
+2009-05-05 23:10:49 Warning: Warning (512): <span style = "color:Red;text-align:left"><b>SQL Error:</b> 1048: Column 'born' cannot be null</span> in [CORE\cake\libs\model\datasources\dbo_source.php, line 525]
+2009-05-06 23:55:23 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\stamboom_v2\cake\basics.php:312) in [CORE\cake\libs\controller\controller.php, line 640]
+2009-05-07 00:16:00 Warning: Warning (2): unlink(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_aros) [<a href='http://php.net/function.unlink'>function.unlink</a>]: Permission denied in [CORE\cake\libs\file.php, line 292]
+2009-05-07 00:16:00 Warning: Warning (2): unlink(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_acos) [<a href='http://php.net/function.unlink'>function.unlink</a>]: Permission denied in [CORE\cake\libs\file.php, line 292]
+2009-05-08 20:44:50 Warning: Warning (512): Method JavascriptHelper::laink does not exist in [CORE\cake\libs\view\helper.php, line 143]
+2009-05-08 21:06:40 Warning: Warning (2): file_get_contents(C:\xampp\htdocs\stamboom_v2\app\webroot\js\hide.js.js) [<a href='http://php.net/function.file-get-contents'>function.file-get-contents</a>]: failed to open stream: No such file or directory in [CORE\cake\libs\view\helpers\javascript.php, line 488]
+2009-05-08 21:17:59 Warning: Warning (2): file_get_contents(C:\xampp\htdocs\stamboom_v2\app\webroot\js\test.js) [<a href='http://php.net/function.file-get-contents'>function.file-get-contents</a>]: failed to open stream: No such file or directory in [CORE\cake\libs\view\helpers\javascript.php, line 488]
+2009-05-08 22:05:05 Warning: Warning (2): file_get_contents(C:\xampp\htdocs\stamboom_v2\app\webroot\js\login_success.js) [<a href='http://php.net/function.file-get-contents'>function.file-get-contents</a>]: failed to open stream: No such file or directory in [CORE\cake\libs\view\helpers\javascript.php, line 488]
+2009-05-08 22:07:24 Warning: Warning (2): session_regenerate_id() [<a href='http://php.net/function.session-regenerate-id'>function.session-regenerate-id</a>]: Session object destruction failed in [CORE\cake\libs\session.php, line 599]
+2009-05-08 23:14:36 Warning: Warning (2): unlink(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\persistent\cake_core_core_paths) [<a href='http://php.net/function.unlink'>function.unlink</a>]: No such file or directory in [CORE\cake\libs\file.php, line 292]
+2009-05-08 23:14:40 Warning: Warning (2): unlink(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_aros_acos) [<a href='http://php.net/function.unlink'>function.unlink</a>]: Permission denied in [CORE\cake\libs\file.php, line 292]
+2009-05-08 23:22:52 Warning: Warning (512): <span style = "color:Red;text-align:left"><b>SQL Error:</b> 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'validationErrors' at line 1</span> in [CORE\cake\libs\model\datasources\dbo_source.php, line 525]
+2009-05-08 23:27:09 Warning: Warning (2): unlink(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_stamboom_list) [<a href='http://php.net/function.unlink'>function.unlink</a>]: Permission denied in [CORE\cake\libs\file.php, line 292]
+2009-05-08 23:35:07 Warning: Warning (2): Illegal offset type in [APP\views\elements\person\form.ctp, line 4]
+2009-05-08 23:35:39 Warning: Warning (2): Illegal offset type in [APP\views\elements\person\form.ctp, line 4]
+2009-05-08 23:35:59 Warning: Warning (2): Illegal offset type in [APP\views\elements\person\form.ctp, line 4]
+2009-05-08 23:36:14 Warning: Warning (2): Illegal offset type in [APP\views\elements\person\form.ctp, line 4]
+2009-05-08 23:36:49 Warning: Warning (2): Illegal offset type in [APP\views\elements\person\form.ctp, line 4]
+2009-05-08 23:37:24 Warning: Warning (2): Illegal offset type in [APP\views\elements\person\form.ctp, line 4]
+2009-05-08 23:42:17 Warning: Warning (2): file_get_contents(C:\xampp\htdocs\stamboom_v2\app\webroot\js\login_success.js) [<a href='http://php.net/function.file-get-contents'>function.file-get-contents</a>]: failed to open stream: No such file or directory in [CORE\cake\libs\view\helpers\javascript.php, line 488]
+2009-05-09 16:20:44 Warning: Warning (2): preg_split() expects parameter 2 to be string, array given in [CORE\cake\libs\view\helpers\form.php, line 1591]
+2009-05-09 16:20:44 Warning: Warning (2): Invalid argument supplied for foreach() in [CORE\cake\libs\view\helpers\form.php, line 1591]
+2009-05-09 16:45:28 Warning: Warning (512): <span style = "color:Red;text-align:left"><b>SQL Error:</b> 1054: Unknown column 'Array' in 'field list'</span> in [CORE\cake\libs\model\datasources\dbo_source.php, line 525]
+2009-05-09 16:46:45 Warning: Warning (512): <span style = "color:Red;text-align:left"><b>SQL Error:</b> 1054: Unknown column 'Array' in 'field list'</span> in [CORE\cake\libs\model\datasources\dbo_source.php, line 525]
+2009-05-09 16:48:19 Warning: Warning (512): <span style = "color:Red;text-align:left"><b>SQL Error:</b> 1054: Unknown column 'Array' in 'field list'</span> in [CORE\cake\libs\model\datasources\dbo_source.php, line 525]
+2009-05-09 16:51:57 Warning: Warning (512): <span style = "color:Red;text-align:left"><b>SQL Error:</b> 1054: Unknown column 'Array' in 'field list'</span> in [CORE\cake\libs\model\datasources\dbo_source.php, line 525]
+2009-05-09 16:52:43 Warning: Warning (512): <span style = "color:Red;text-align:left"><b>SQL Error:</b> 1054: Unknown column 'Array' in 'field list'</span> in [CORE\cake\libs\model\datasources\dbo_source.php, line 525]
+2009-05-09 16:52:55 Warning: Warning (512): <span style = "color:Red;text-align:left"><b>SQL Error:</b> 1054: Unknown column 'Array' in 'field list'</span> in [CORE\cake\libs\model\datasources\dbo_source.php, line 525]
+2009-05-09 16:53:50 Warning: Warning (512): <span style = "color:Red;text-align:left"><b>SQL Error:</b> 1054: Unknown column 'Array' in 'field list'</span> in [CORE\cake\libs\model\datasources\dbo_source.php, line 525]
+2009-05-09 16:54:12 Warning: Warning (512): <span style = "color:Red;text-align:left"><b>SQL Error:</b> 1054: Unknown column 'Array' in 'field list'</span> in [CORE\cake\libs\model\datasources\dbo_source.php, line 525]
+2009-05-09 16:54:40 Warning: Warning (512): <span style = "color:Red;text-align:left"><b>SQL Error:</b> 1054: Unknown column 'Array' in 'field list'</span> in [CORE\cake\libs\model\datasources\dbo_source.php, line 525]
+2009-05-09 16:55:24 Warning: Warning (512): <span style = "color:Red;text-align:left"><b>SQL Error:</b> 1054: Unknown column 'Array' in 'field list'</span> in [CORE\cake\libs\model\datasources\dbo_source.php, line 525]
+2009-05-09 16:56:00 Warning: Warning (512): <span style = "color:Red;text-align:left"><b>SQL Error:</b> 1054: Unknown column 'Array' in 'field list'</span> in [CORE\cake\libs\model\datasources\dbo_source.php, line 525]
+2009-05-09 16:57:44 Warning: Warning (512): <span style = "color:Red;text-align:left"><b>SQL Error:</b> 1054: Unknown column 'Array' in 'field list'</span> in [CORE\cake\libs\model\datasources\dbo_source.php, line 525]
+2009-05-09 16:58:22 Warning: Warning (512): <span style = "color:Red;text-align:left"><b>SQL Error:</b> 1054: Unknown column 'Array' in 'field list'</span> in [CORE\cake\libs\model\datasources\dbo_source.php, line 525]
+2009-05-09 16:58:53 Warning: Warning (512): <span style = "color:Red;text-align:left"><b>SQL Error:</b> 1054: Unknown column 'Array' in 'field list'</span> in [CORE\cake\libs\model\datasources\dbo_source.php, line 525]
+2009-05-09 16:59:26 Warning: Warning (512): <span style = "color:Red;text-align:left"><b>SQL Error:</b> 1054: Unknown column 'Array' in 'field list'</span> in [CORE\cake\libs\model\datasources\dbo_source.php, line 525]
+2009-05-09 17:01:41 Warning: Warning (2): unlink(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_people) [<a href='http://php.net/function.unlink'>function.unlink</a>]: Permission denied in [CORE\cake\libs\file.php, line 292]
+2009-05-09 17:01:41 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\stamboom_v2\cake\basics.php:111) in [CORE\cake\libs\controller\controller.php, line 640]
+2009-05-09 17:02:29 Warning: Warning (512): <span style = "color:Red;text-align:left"><b>SQL Error:</b> 1054: Unknown column 'Array' in 'field list'</span> in [CORE\cake\libs\model\datasources\dbo_source.php, line 525]
+2009-05-09 17:02:53 Warning: Warning (512): <span style = "color:Red;text-align:left"><b>SQL Error:</b> 1054: Unknown column 'Array' in 'field list'</span> in [CORE\cake\libs\model\datasources\dbo_source.php, line 525]
+2009-05-09 17:02:57 Warning: Warning (512): <span style = "color:Red;text-align:left"><b>SQL Error:</b> 1054: Unknown column 'Array' in 'field list'</span> in [CORE\cake\libs\model\datasources\dbo_source.php, line 525]
+2009-05-09 17:04:45 Warning: Warning (512): <span style = "color:Red;text-align:left"><b>SQL Error:</b> 1054: Unknown column 'Array' in 'field list'</span> in [CORE\cake\libs\model\datasources\dbo_source.php, line 525]
+2009-05-09 17:05:08 Warning: Warning (512): <span style = "color:Red;text-align:left"><b>SQL Error:</b> 1054: Unknown column 'Array' in 'field list'</span> in [CORE\cake\libs\model\datasources\dbo_source.php, line 525]
+2009-05-09 17:05:16 Warning: Warning (512): <span style = "color:Red;text-align:left"><b>SQL Error:</b> 1054: Unknown column 'Array' in 'field list'</span> in [CORE\cake\libs\model\datasources\dbo_source.php, line 525]
+2009-05-09 17:05:38 Warning: Warning (512): <span style = "color:Red;text-align:left"><b>SQL Error:</b> 1054: Unknown column 'Array' in 'field list'</span> in [CORE\cake\libs\model\datasources\dbo_source.php, line 525]
+2009-05-09 17:06:15 Warning: Warning (512): <span style = "color:Red;text-align:left"><b>SQL Error:</b> 1054: Unknown column 'Array' in 'field list'</span> in [CORE\cake\libs\model\datasources\dbo_source.php, line 525]
+2009-05-09 17:07:23 Warning: Warning (512): <span style = "color:Red;text-align:left"><b>SQL Error:</b> 1054: Unknown column 'Array' in 'field list'</span> in [CORE\cake\libs\model\datasources\dbo_source.php, line 525]
+2009-05-09 17:07:25 Warning: Warning (512): <span style = "color:Red;text-align:left"><b>SQL Error:</b> 1054: Unknown column 'Array' in 'field list'</span> in [CORE\cake\libs\model\datasources\dbo_source.php, line 525]
+2009-05-09 17:07:41 Warning: Warning (512): <span style = "color:Red;text-align:left"><b>SQL Error:</b> 1054: Unknown column 'Array' in 'field list'</span> in [CORE\cake\libs\model\datasources\dbo_source.php, line 525]
+2009-05-09 17:19:16 Warning: Warning (512): <span style = "color:Red;text-align:left"><b>SQL Error:</b> 1054: Unknown column 'Array' in 'field list'</span> in [CORE\cake\libs\model\datasources\dbo_source.php, line 525]
+2009-05-09 17:28:05 Warning: Warning (512): <span style = "color:Red;text-align:left"><b>SQL Error:</b> 1054: Unknown column 'Array' in 'field list'</span> in [CORE\cake\libs\model\datasources\dbo_source.php, line 525]
+2009-05-09 17:40:36 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\stamboom_v2\cake\basics.php:111) in [CORE\cake\libs\controller\controller.php, line 640]
+2009-05-09 17:47:40 Warning: Warning (2): array_push() [<a href='http://php.net/function.array-push'>function.array-push</a>]: First argument should be an array in [APP\views\elements\person\form.ctp, line 10]
+2009-05-09 21:34:30 Warning: Warning (2): Missing argument 1 for pr(), called in C:\xampp\htdocs\stamboom_v2\app\views\elements\login.ctp on line 2 and defined in [CORE\cake\basics.php, line 310]
+2009-05-27 00:12:03 Warning: Warning (2): fopen(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_stamboom_list) [<a href='http://php.net/function.fopen'>function.fopen</a>]: failed to open stream: No such file or directory in [CORE\cake\libs\file.php, line 156]
+2009-05-27 00:12:08 Warning: Warning (2): unlink(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\persistent\cake_core_file_map) [<a href='http://php.net/function.unlink'>function.unlink</a>]: No such file or directory in [CORE\cake\libs\file.php, line 292]
+2009-05-27 00:12:15 Warning: Warning (2): unlink(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_aros) [<a href='http://php.net/function.unlink'>function.unlink</a>]: Permission denied in [CORE\cake\libs\file.php, line 292]
+2009-05-27 00:12:15 Warning: Warning (2): unlink(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_acos) [<a href='http://php.net/function.unlink'>function.unlink</a>]: Permission denied in [CORE\cake\libs\file.php, line 292]
+2009-05-27 00:12:40 Warning: Warning (2): fopen(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\persistent\cake_core_core_paths) [<a href='http://php.net/function.fopen'>function.fopen</a>]: failed to open stream: Permission denied in [CORE\cake\libs\file.php, line 156]
+2009-05-27 00:12:40 Warning: Warning (2): unlink(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_stamboom_list) [<a href='http://php.net/function.unlink'>function.unlink</a>]: Permission denied in [CORE\cake\libs\file.php, line 292]
+2009-05-27 00:13:04 Warning: Warning (2): fopen(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\persistent\cake_core_file_map) [<a href='http://php.net/function.fopen'>function.fopen</a>]: failed to open stream: No such file or directory in [CORE\cake\libs\file.php, line 156]
+2009-05-27 00:13:05 Warning: Warning (2): unlink(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_aros) [<a href='http://php.net/function.unlink'>function.unlink</a>]: Permission denied in [CORE\cake\libs\file.php, line 292]
+2009-05-27 00:14:27 Warning: Warning (2): unlink(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_aros) [<a href='http://php.net/function.unlink'>function.unlink</a>]: Permission denied in [CORE\cake\libs\file.php, line 292]
+2009-05-27 00:22:23 Warning: Warning (2): unlink(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_users) [<a href='http://php.net/function.unlink'>function.unlink</a>]: No such file or directory in [CORE\cake\libs\file.php, line 292]
+2009-05-27 00:22:23 Warning: Warning (2): unlink(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_users) [<a href='http://php.net/function.unlink'>function.unlink</a>]: Permission denied in [CORE\cake\libs\file.php, line 292]
+2009-05-27 21:32:52 Warning: Warning (2): unlink(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\persistent\cake_core_dir_map) [<a href='http://php.net/function.unlink'>function.unlink</a>]: Permission denied in [CORE\cake\libs\file.php, line 292]
+2009-05-27 21:32:52 Warning: Warning (2): unlink(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\persistent\cake_core_dir_map) [<a href='http://php.net/function.unlink'>function.unlink</a>]: Permission denied in [CORE\cake\libs\file.php, line 292]
+2009-05-27 21:32:55 Warning: Warning (2): unlink(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_aros) [<a href='http://php.net/function.unlink'>function.unlink</a>]: Permission denied in [CORE\cake\libs\file.php, line 292]
+2009-05-27 21:32:55 Warning: Warning (2): unlink(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_acos) [<a href='http://php.net/function.unlink'>function.unlink</a>]: Permission denied in [CORE\cake\libs\file.php, line 292]
+2009-05-27 21:32:55 Warning: Warning (2): unlink(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_aros_acos) [<a href='http://php.net/function.unlink'>function.unlink</a>]: Permission denied in [CORE\cake\libs\file.php, line 292]
+2009-05-27 21:32:55 Warning: Warning (2): unlink(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_aros_acos) [<a href='http://php.net/function.unlink'>function.unlink</a>]: Permission denied in [CORE\cake\libs\file.php, line 292]
+2009-05-27 21:32:55 Warning: Warning (2): fopen(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_people) [<a href='http://php.net/function.fopen'>function.fopen</a>]: failed to open stream: No such file or directory in [CORE\cake\libs\file.php, line 156]
+2009-05-27 21:32:56 Warning: Warning (2): unlink(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\persistent\cake_core_default_dut) [<a href='http://php.net/function.unlink'>function.unlink</a>]: Permission denied in [CORE\cake\libs\file.php, line 292]
+2009-05-27 21:33:58 Warning: Warning (2): fopen(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_acos) [<a href='http://php.net/function.fopen'>function.fopen</a>]: failed to open stream: Permission denied in [CORE\cake\libs\file.php, line 156]
+2009-05-27 21:48:33 Warning: Warning (2): fopen(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_people) [<a href='http://php.net/function.fopen'>function.fopen</a>]: failed to open stream: No such file or directory in [CORE\cake\libs\file.php, line 156]
+2009-05-27 21:48:33 Warning: Warning (2): unlink(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_people) [<a href='http://php.net/function.unlink'>function.unlink</a>]: Permission denied in [CORE\cake\libs\file.php, line 292]
+2009-05-27 22:03:48 Warning: Warning (2): unlink(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_acos) [<a href='http://php.net/function.unlink'>function.unlink</a>]: Permission denied in [CORE\cake\libs\file.php, line 292]
+2009-05-27 22:10:34 Warning: Warning (2): fopen(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_aros) [<a href='http://php.net/function.fopen'>function.fopen</a>]: failed to open stream: No such file or directory in [CORE\cake\libs\file.php, line 156]
+2009-05-27 22:10:34 Warning: Warning (2): fopen(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_aros) [<a href='http://php.net/function.fopen'>function.fopen</a>]: failed to open stream: No such file or directory in [CORE\cake\libs\file.php, line 156]
+2009-05-27 22:10:34 Warning: Warning (2): unlink(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_acos) [<a href='http://php.net/function.unlink'>function.unlink</a>]: Permission denied in [CORE\cake\libs\file.php, line 292]
+2009-05-27 22:10:34 Warning: Warning (2): unlink(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_acos) [<a href='http://php.net/function.unlink'>function.unlink</a>]: Permission denied in [CORE\cake\libs\file.php, line 292]
+2009-05-27 22:10:36 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\stamboom_v2\cake\basics.php:111) in [CORE\cake\libs\controller\controller.php, line 640]
+2009-05-27 22:12:08 Warning: Warning (2): fopen(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_aros_acos) [<a href='http://php.net/function.fopen'>function.fopen</a>]: failed to open stream: Permission denied in [CORE\cake\libs\file.php, line 156]
+2009-05-27 22:15:40 Warning: Warning (2): unlink(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_aros_acos) [<a href='http://php.net/function.unlink'>function.unlink</a>]: Permission denied in [CORE\cake\libs\file.php, line 292]
+2009-05-27 22:15:40 Warning: Warning (2): unlink(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_aros_acos) [<a href='http://php.net/function.unlink'>function.unlink</a>]: Permission denied in [CORE\cake\libs\file.php, line 292]
+2009-05-27 22:15:42 Warning: Warning (2): unlink(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_people) [<a href='http://php.net/function.unlink'>function.unlink</a>]: Permission denied in [CORE\cake\libs\file.php, line 292]
+2009-05-27 22:16:25 Warning: Warning (2): fopen(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_users) [<a href='http://php.net/function.fopen'>function.fopen</a>]: failed to open stream: No such file or directory in [CORE\cake\libs\file.php, line 156]
+2009-05-27 22:22:31 Warning: Warning (2): unlink(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_aros) [<a href='http://php.net/function.unlink'>function.unlink</a>]: Permission denied in [CORE\cake\libs\file.php, line 292]
+2009-05-27 22:41:33 Warning: Warning (2): unlink(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_aros) [<a href='http://php.net/function.unlink'>function.unlink</a>]: Permission denied in [CORE\cake\libs\file.php, line 292]
+2009-05-27 22:41:33 Warning: Warning (2): unlink(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_aros_acos) [<a href='http://php.net/function.unlink'>function.unlink</a>]: Permission denied in [CORE\cake\libs\file.php, line 292]
+2009-05-27 22:41:34 Warning: Warning (2): fopen(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\persistent\cake_core_default_dut) [<a href='http://php.net/function.fopen'>function.fopen</a>]: failed to open stream: No such file or directory in [CORE\cake\libs\file.php, line 156]
+2009-05-27 22:41:34 Warning: Warning (2): unlink(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\persistent\cake_core_core_paths) [<a href='http://php.net/function.unlink'>function.unlink</a>]: Permission denied in [CORE\cake\libs\file.php, line 292]
+2009-05-27 22:59:45 Warning: Warning (2): unlink(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_users) [<a href='http://php.net/function.unlink'>function.unlink</a>]: Permission denied in [CORE\cake\libs\file.php, line 292]
+2009-05-27 23:04:16 Warning: Warning (2): fopen(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_users) [<a href='http://php.net/function.fopen'>function.fopen</a>]: failed to open stream: No such file or directory in [CORE\cake\libs\file.php, line 156]
+2009-05-27 23:04:16 Warning: Warning (2): unlink(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\persistent\cake_core_core_paths) [<a href='http://php.net/function.unlink'>function.unlink</a>]: Permission denied in [CORE\cake\libs\file.php, line 292]
+2009-05-27 23:04:26 Warning: Warning (2): unlink(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_acos) [<a href='http://php.net/function.unlink'>function.unlink</a>]: Permission denied in [CORE\cake\libs\file.php, line 292]
+2009-05-27 23:04:26 Warning: Warning (2): fopen(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_aros_acos) [<a href='http://php.net/function.fopen'>function.fopen</a>]: failed to open stream: Permission denied in [CORE\cake\libs\file.php, line 156]
+2009-05-27 23:04:26 Warning: Warning (2): unlink(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_aros_acos) [<a href='http://php.net/function.unlink'>function.unlink</a>]: Permission denied in [CORE\cake\libs\file.php, line 292]
+2009-05-27 23:04:49 Warning: Warning (2): fopen(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_users) [<a href='http://php.net/function.fopen'>function.fopen</a>]: failed to open stream: No such file or directory in [CORE\cake\libs\file.php, line 156]
+2009-05-27 23:07:11 Warning: Warning (2): fopen(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\persistent\cake_core_core_paths) [<a href='http://php.net/function.fopen'>function.fopen</a>]: failed to open stream: No such file or directory in [CORE\cake\libs\file.php, line 156]
+2009-05-27 23:07:11 Warning: Warning (2): fopen(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\persistent\cake_core_core_paths) [<a href='http://php.net/function.fopen'>function.fopen</a>]: failed to open stream: No such file or directory in [CORE\cake\libs\file.php, line 156]
+2009-05-27 23:07:11 Warning: Warning (2): fopen(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_acos) [<a href='http://php.net/function.fopen'>function.fopen</a>]: failed to open stream: No such file or directory in [CORE\cake\libs\file.php, line 156]
+2009-05-27 23:07:11 Warning: Warning (2): unlink(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_acos) [<a href='http://php.net/function.unlink'>function.unlink</a>]: Permission denied in [CORE\cake\libs\file.php, line 292]
+2009-05-27 23:08:40 Warning: Warning (2): unlink(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_users) [<a href='http://php.net/function.unlink'>function.unlink</a>]: Permission denied in [CORE\cake\libs\file.php, line 292]
+2009-05-27 23:12:49 Warning: Warning (2): unlink(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_users) [<a href='http://php.net/function.unlink'>function.unlink</a>]: No such file or directory in [CORE\cake\libs\file.php, line 292]
+2009-05-27 23:13:31 Warning: Warning (2): unlink(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_users) [<a href='http://php.net/function.unlink'>function.unlink</a>]: Permission denied in [CORE\cake\libs\file.php, line 292]
+2009-05-27 23:28:16 Warning: Warning (2): unlink(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_stamboom_list) [<a href='http://php.net/function.unlink'>function.unlink</a>]: Permission denied in [CORE\cake\libs\file.php, line 292]
+2009-05-27 23:28:16 Warning: Warning (2): unlink(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_acos) [<a href='http://php.net/function.unlink'>function.unlink</a>]: Permission denied in [CORE\cake\libs\file.php, line 292]
+2009-05-27 23:28:16 Warning: Warning (2): unlink(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_acos) [<a href='http://php.net/function.unlink'>function.unlink</a>]: Permission denied in [CORE\cake\libs\file.php, line 292]
+2009-05-27 23:28:16 Warning: Warning (2): fopen(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_aros_acos) [<a href='http://php.net/function.fopen'>function.fopen</a>]: failed to open stream: No such file or directory in [CORE\cake\libs\file.php, line 156]
+2009-05-27 23:28:16 Warning: Warning (2): unlink(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_aros_acos) [<a href='http://php.net/function.unlink'>function.unlink</a>]: Permission denied in [CORE\cake\libs\file.php, line 292]
+2009-05-27 23:28:16 Warning: Warning (2): fopen(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\persistent\cake_core_default_dut) [<a href='http://php.net/function.fopen'>function.fopen</a>]: failed to open stream: No such file or directory in [CORE\cake\libs\file.php, line 156]
+2009-05-27 23:28:27 Warning: Warning (2): fopen(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_acos) [<a href='http://php.net/function.fopen'>function.fopen</a>]: failed to open stream: No such file or directory in [CORE\cake\libs\file.php, line 156]
+2009-05-27 23:28:39 Warning: Warning (2): unlink(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_people) [<a href='http://php.net/function.unlink'>function.unlink</a>]: Permission denied in [CORE\cake\libs\file.php, line 292]
+2009-05-27 23:31:59 Warning: Warning (2): fopen(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_users) [<a href='http://php.net/function.fopen'>function.fopen</a>]: failed to open stream: No such file or directory in [CORE\cake\libs\file.php, line 156]
+2009-05-27 23:35:59 Warning: Warning (2): unlink(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_users) [<a href='http://php.net/function.unlink'>function.unlink</a>]: Permission denied in [CORE\cake\libs\file.php, line 292]
+2009-05-27 23:36:44 Warning: Warning (2): unlink(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_aros) [<a href='http://php.net/function.unlink'>function.unlink</a>]: Permission denied in [CORE\cake\libs\file.php, line 292]
+2009-05-27 23:36:44 Warning: Warning (2): fopen(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_aros_acos) [<a href='http://php.net/function.fopen'>function.fopen</a>]: failed to open stream: No such file or directory in [CORE\cake\libs\file.php, line 156]
+2009-05-27 23:36:44 Warning: Warning (2): unlink(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_aros_acos) [<a href='http://php.net/function.unlink'>function.unlink</a>]: Permission denied in [CORE\cake\libs\file.php, line 292]
+2009-05-27 23:40:33 Warning: Warning (2): unlink(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_acos) [<a href='http://php.net/function.unlink'>function.unlink</a>]: Permission denied in [CORE\cake\libs\file.php, line 292]
+2009-05-27 23:40:41 Warning: Warning (2): fopen(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\persistent\cake_core_file_map) [<a href='http://php.net/function.fopen'>function.fopen</a>]: failed to open stream: No such file or directory in [CORE\cake\libs\file.php, line 156]
+2009-05-27 23:40:41 Warning: Warning (2): unlink(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\persistent\cake_core_core_paths) [<a href='http://php.net/function.unlink'>function.unlink</a>]: Permission denied in [CORE\cake\libs\file.php, line 292]
+2009-05-27 23:40:43 Warning: Warning (2): unlink(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_users) [<a href='http://php.net/function.unlink'>function.unlink</a>]: Permission denied in [CORE\cake\libs\file.php, line 292]
+2009-05-27 23:41:04 Warning: Warning (2): unlink(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_users) [<a href='http://php.net/function.unlink'>function.unlink</a>]: Permission denied in [CORE\cake\libs\file.php, line 292]
+2009-05-27 23:41:12 Warning: Warning (2): unlink(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_aros) [<a href='http://php.net/function.unlink'>function.unlink</a>]: Permission denied in [CORE\cake\libs\file.php, line 292]
+2009-05-27 23:42:57 Warning: Warning (2): fopen(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_aros) [<a href='http://php.net/function.fopen'>function.fopen</a>]: failed to open stream: Permission denied in [CORE\cake\libs\file.php, line 156]
+2009-05-27 23:42:57 Warning: Warning (2): unlink(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_acos) [<a href='http://php.net/function.unlink'>function.unlink</a>]: Permission denied in [CORE\cake\libs\file.php, line 292]
+2009-05-27 23:42:57 Warning: Warning (2): unlink(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_aros_acos) [<a href='http://php.net/function.unlink'>function.unlink</a>]: Permission denied in [CORE\cake\libs\file.php, line 292]
+2009-05-27 23:42:57 Warning: Warning (2): unlink(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_people) [<a href='http://php.net/function.unlink'>function.unlink</a>]: Permission denied in [CORE\cake\libs\file.php, line 292]
+2009-05-27 23:48:24 Warning: Warning (2): unlink(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_aros_acos) [<a href='http://php.net/function.unlink'>function.unlink</a>]: Permission denied in [CORE\cake\libs\file.php, line 292]
+2009-05-27 23:49:25 Warning: Warning (2): unlink(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_users) [<a href='http://php.net/function.unlink'>function.unlink</a>]: Permission denied in [CORE\cake\libs\file.php, line 292]
+2009-06-21 15:20:32 Warning: Warning (2): unlink(C:\xampp\htdocs\stamboom_v2\app\tmp\cache\models\cake_model_default_users) [<a href='http://php.net/function.unlink'>function.unlink</a>]: Permission denied in [CORE\cake\libs\file.php, line 292]
