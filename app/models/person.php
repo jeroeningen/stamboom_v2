@@ -57,14 +57,23 @@ class Person extends AppModel {
 	 */
 	function forumLogin($data) {
 		$this->useDbConfig = 'forum';
-		$forumdata = $this->query("SELECT realname, passwd FROM smf_members WHERE memberName='".$data['Person']['username']."' 
-			AND passwd='".sha1(strtolower($data['Person']['username']) . $data['Person']['password'])."'");
+		$forumdata = $this->query("SELECT realname, passwd FROM smf_members WHERE memberName='".mysql_real_escape_string($data['Person']['username'])."' 
+			AND passwd='".sha1(mysql_real_escape_string(strtolower($data['Person']['username'])) . mysql_real_escape_string($data['Person']['password']))."'");
 		$this->useDbConfig = 'default';
-		if (!empty($forumdata)) {
-			return $forumdata;
-		} else {
-			return false;
-		}
+	    return $forumdata;
 	}
+	
+	/**
+	 * Get the email and rrealname of a user
+	 * @param $username
+	 * @return unknown_type
+	 */
+	function getForumDataByUsername($username) {
+        $this->useDbConfig = 'forum';
+        $forumdata = $this->query("SELECT realname, emailAddress FROM smf_members WHERE memberName='".mysql_real_escape_string($username)."'");
+        $this->useDbConfig = 'default';
+        return $forumdata[0];
+	}
+	
 }
 ?>

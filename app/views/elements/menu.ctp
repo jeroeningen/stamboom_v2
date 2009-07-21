@@ -7,7 +7,7 @@
 	}
 	if ($this->name == 'People' && !empty($person)) {
 		echo $html->link('Wijzig je beschrijving', array('controller' => 'people', 'action' => 'edit'), $modalbox).' ';
-		echo $html->link('Upload je foto', array('controller' => 'people', 'action' => 'upload')).' ';
+		echo $html->link('Upload je foto', array('controller' => 'people', 'action' => 'upload'), $modalbox_picture).' ';
 		if (!empty($person['Person']['picture'])) {
 			echo $html->link('Verwjder je foto', array('controller' => 'people', 'action' => 'picture_delete'), array('onclick' => 'return confirm("Wil je je foto echt verwijderen??");')).' ';
 		}

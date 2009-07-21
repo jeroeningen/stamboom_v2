@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="content-language" content="dutch" />
-<meta http-equiv="copyright" content="Copyright &copy; Viafrica Foundation" />
+<meta http-equiv="copyright" content="Copyright &copy; SV Liber" />
 <meta http-equiv="robots" content="index,follow" />
 <title>Liber stamboom - <?php echo $title_for_layout?></title>
 	<?php 
@@ -13,28 +13,10 @@
 		echo $javascript->link('scriptaculous.js');
 		echo $javascript->link('prototip.js');
 		echo $javascript->link('modalbox.js');
-		echo $javascript->link('swfupload.js');
 		echo $html->css('modalbox');
 		echo $html->css('prototip');
 	}
-	if (isset($swfupload)) {
 	?>
-	<script type="text/javascript">
-		var swfu;
-		
-		window.onload = function () { 
-			swfu = new SWFUpload({ 
-				upload_url : "http://www.swfupload.org/upload.php", 
-				flash_url : "files/swfupload.swf", 
-				file_size_limit : "20 MB",
-				button_placeholder_id: 'SWFUpload',
-			});
-		};
-	</script>
-<?php
-	}
-?>
-
 </head>
 
 <body>

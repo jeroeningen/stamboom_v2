@@ -4,15 +4,16 @@ class PeopleController extends AppController {
 	var $name = 'People';
 	var $helpers = array('Html', 'Form', 'Tree', 'Javascript');
 	var $uses = 'Person';
-	var $components = array("Image");
+	var $components = array("Image", "Email");
 
 	function beforeFilter() {
 		parent::beforeFilter();
-		$this->Auth->allowedActions = array('index', 'view', 'login', 'logout', 'edit', 'upload', 'picture', 'picture_delete');
+		$this->Auth->allowedActions = array('index', 'view', 'login', 'logout', 'edit', 'upload', 'picture', 'picture_delete', 'complain');
 		
 		//do the necessary things for modalbox
 		$this->layout = 'popup';
-		$this->set('modalbox', array('onclick' => 'Modalbox.show(this.href, {title: this.title, afterHide: function() {location.href = document.location}, width: 600, params: null, autoFocusing: true}); return false;'));
+        $this->set('modalbox', array('onclick' => 'Modalbox.show(this.href, {title: this.title, afterHide: function() {location.href = document.location}, width: 600, params: null, autoFocusing: true}); return false;'));
+        $this->set('modalbox_picture', array('onclick' => 'Modalbox.show(this.href, {title: this.title, afterHide: function() {location.href = document.location}, width: 600, method: \'post\', autoFocusing: true}); return false;'));
 	}
 	
 	function index() {
@@ -30,6 +31,19 @@ class PeopleController extends AppController {
 		} else if(!$this->data = $this->Session->read('person')) {
 			$this->redirect(array('action' => 'login'));
 		}
+	}
+	
+	function complain($name) {
+	   $person = $this->Person->getForumDataByUsername($name);
+	   $from = $person['smf_members']['realname'] . "<" . $person['smf_members']['emailAddress']; 
+	   $this->Email->sendAs = 'html';
+	   $this->Email->to = "tom@svliber.nl <jeroeningen@gmail.com>";
+       $this->Email->bcc = array($from);
+       $this->Email->from = $from;
+       $this->Email->subject = "Aan de slag!";
+       pr($this->Email->send(array("Welverdorie, ben je nu onze geliefde " . $person['smf_members']['realname'] . "vergeten? Waar wacht je nog op, toevoegen die handel!")));
+       
+	   exit();
 	}
 	
 	function picture($id = null) {
@@ -54,10 +68,9 @@ class PeopleController extends AppController {
 		} else if(!$this->data = $this->Session->read('person')) {
 			$this->redirect(array('action' => 'login'));
 		}
-		//$this->set('swfupload', true);
+		
 		$person = $this->Session->read('person');
 		$this->data = $this->Person->read(null, $person['Person']['id']);
-		$this->layout = 'default';
 	}
 	
 	function picture_delete() {
@@ -73,6 +86,7 @@ class PeopleController extends AppController {
 	}
 	
 	function login() {
+	    $this->set('modalbox_login', array('onclick' => 'Modalbox.show(this.form.action, {method: \'post\', params: Form.serialize(this.form.id)})'));
 		if (!empty($this->data)) {
 			if ($person = $this->Person->forumLogin($this->data)) {
 				if ($person = $this->Person->findByName($person[0]['smf_members']['realname'])) {

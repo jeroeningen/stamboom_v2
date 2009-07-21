@@ -67,7 +67,6 @@ class AppController extends Controller {
 		}
 		Configure::write('Security.level', 'high');
 		
-		$this->set('modalbox_login', array('onclick' => 'Modalbox.show(this.form.action, {method: \'post\', params: Form.serialize(this.form.id)})'));
 	}
 	
 	/**
