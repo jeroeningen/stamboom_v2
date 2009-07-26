@@ -46,5 +46,5 @@
 	}
 ?>
 	</fieldset>
-<?php echo $form->end(array('onclick' => 'Modalbox.show(this.form.action, {title: this.title, width: 600, params: Form.serialize(this.form), method: \'post\'}); return false;'));?>
+<?php echo $form->end('Verzend' ,array('onclick' => 'Modalbox.show(this.form.action, {title: this.title, width: 600, params: Form.serialize(this.form), method: \'post\'}); return false;'));?>
 </div>

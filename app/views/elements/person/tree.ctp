@@ -1,7 +1,5 @@
 <?php
 	$tree->addItemAttribute('class', 'leaf');
-	$photolink = "";
-	$photolink = $html->link('Verwijder foto', array('controller' => 'people', 'action' => 'picture_delete', 'id' => $data['Person']['id'], 'admin' => 1));
 	echo '<div class="person">';
 	
 	//create the tooltip if a picture is set
@@ -29,16 +27,17 @@
 	unset($modalbox['class']);
 	
 	//set links for admin
-	echo '<div class="small">';
 	if (!empty($authUser)) {
-		echo $html->link('Bewerk', array('controller' => 'people', 'action' => 'edit', 'id' => $data['Person']['id'], 'admin' => 1), $modalbox).' '.
+		echo '<div class="admin_bar">'.$html->link('Bewerk', array('controller' => 'people', 'action' => 'edit', 'id' => $data['Person']['id'], 'admin' => 1), $modalbox).' '.
 			$html->link('Voeg jojo toe', array('controller' => 'people', 'action' => 'add', 'parent_id' => $data['Person']['id'], 'admin' => 1), $modalbox).' '.
 			$html->link('Verwijder Libertijn en jojo\'s', array('controller' => 'people', 'action' => 'delete', 'id' => $data['Person']['id'], 'admin' => 1)).' '.
 			$html->link('Verwijder Libertijn', array('controller' => 'people', 'action' => 'delete', 'id' => $data['Person']['id'], 'remove_from_tree' => true, 'admin' => 1)).' '.
-			$html->link('Upload foto', array('controller' => 'people', 'action' => 'upload', 'id' => $data['Person']['id'], 'admin' => 1)).' '.
-			$photolink;
+			$html->link('Upload foto', array('controller' => 'people', 'action' => 'upload', 'id' => $data['Person']['id'], 'admin' => 1), $modalbox_picture).' ';
+		if (!empty($data['Person']['picture'])) {
+		    echo $html->link('Verwijder foto', array('controller' => 'people', 'action' => 'picture_delete', 'id' => $data['Person']['id'], 'admin' => 1));
+		}
+		echo '</div>';
 	}
-	echo '</div>';
 	   
 	
 ?>

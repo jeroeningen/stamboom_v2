@@ -45,17 +45,19 @@ class PeopleController extends AppController {
        $this->Email->send(array("Welverdorie, ben je nu onze geliefde " . $person['smf_members']['realname'] . " vergeten? Waar wacht je nog op, toevoegen die handel!"));
 	}
 	
+	//function to show the picture in the tootip and the large picture in the profile
 	function picture($id = null) {
-		if ($this->params['named']['small']) {
+		if (!empty($this->params['named']['small'])) {
 			$this->layout = 'tooltip'; 
 		}
 		$this->set('person', $this->Person->read(null, $id));
 	}
 	
+	//function to let the forumuser upload an image 
 	function upload() {
 		 if (!empty($this->data['Image']['picture']['name'])) {
 			if (!empty($this->data['Person']['picture'])) {
-				$this->deleteImage($this->data['Person']['picture']);
+				$this->__deleteImage($this->data['Person']['picture']);
 			}
 			$this->data['Person']['picture'] = $this->Image->upload_image_and_thumbnail($this->data,"picture",573,80,"people",true);
 			$person = $this->Session->read('person');
@@ -72,11 +74,12 @@ class PeopleController extends AppController {
 		$this->data = $this->Person->read(null, $person['Person']['id']);
 	}
 	
-	function picture_delete() {
+	//function to let the forumuser delete his image 
+    function picture_delete() {
 		$person = $this->Session->read('person');
 		$person = $this->Person->read(null, $person['Person']['id']);
 		if (!empty($person['Person']['picture'])) {
-			$this->deleteImage($person['Person']['picture']);
+			$this->__deleteImage($person['Person']['picture']);
 		}
 		$person['Person']['picture'] = "";
 		$this->Person->save($person);
@@ -84,6 +87,7 @@ class PeopleController extends AppController {
 		$this->redirect(array('action'=>'index'));
 	}
 	
+	//function to login a forumuser
 	function login() {
 	    $this->set('modalbox_login', array('onclick' => 'Modalbox.show(this.form.action, {method: \'post\', params: Form.serialize(this.form.id)})'));
 		if (!empty($this->data)) {
@@ -106,6 +110,7 @@ class PeopleController extends AppController {
 		}
 	}
 	
+    //function to logout a forumuser
 	function logout() {
 		$this->Session->del('person');
 		$this->Session->setFlash('DOEI!');
@@ -184,7 +189,7 @@ class PeopleController extends AppController {
 		
 		$person = $this->Person->read(null, $id);
 		if (!empty($person['Person']['picture'])) {
-			$this->deleteImage($person['Person']['picture']);
+			$this->__deleteImage($person['Person']['picture']);
 		}
 		if (!empty($this->params['named']['remove_from_tree'])) {
 			if ($this->Person->removefromtree($id, true)) {
@@ -195,6 +200,7 @@ class PeopleController extends AppController {
 		}
 	}
 	
+	//function to delete image
 	function admin_picture_delete($id = null) {
 		if (!$id) {
 			$this->Session->setFlash(__('Invalid id for Person', true));
@@ -203,13 +209,14 @@ class PeopleController extends AppController {
 		
 		$person = $this->Person->read(null, $id);
 		if (!empty($person['Person']['picture'])) {
-			$this->deleteImage($person['Person']['picture']);
+			$this->__deleteImage($person['Person']['picture']);
 		}
 		$person['Person']['picture'] = "";
 		$this->Person->save($person);
 		$this->redirect(array('action'=>'index'));
 	}
 	
+	//function to upload an image
 	function admin_upload($id = null) {
 		if (!$id) {
 			$this->Session->setFlash(__('Invalid id for Person', true));
@@ -218,7 +225,7 @@ class PeopleController extends AppController {
 		
 		if (!empty($this->data['Image']['picture']['name'])) {
 			if (!empty($this->data['Person']['picture'])) {
-				$this->deleteImage($this->data['Person']['picture']);
+				$this->__deleteImage($this->data['Person']['picture']);
 			}
 			$this->data['Person']['picture'] = $this->Image->upload_image_and_thumbnail($this->data,"picture",573,80,"people",true);
 			$this->Person->read(null, $id);
@@ -226,7 +233,6 @@ class PeopleController extends AppController {
 			$this->redirect(array('action' => 'index'));
 		}
 		$this->data = $this->Person->read(null, $id);
-		$this->layout = 'default';
 	}
 
 }

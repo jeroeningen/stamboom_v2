@@ -73,9 +73,9 @@ class AppController extends Controller {
 	 * Delete the people image
 	 * 
 	 * @param $name
-	 * 
+	 * @access private
 	 */
-	function deleteImage($name){
+	function __deleteImage($name){
 		unlink('img/people/small/'.$name);
 		unlink('img/people/big/'.$name);
 	}

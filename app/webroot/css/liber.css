@@ -1,96 +1,83 @@
 /**
- * Body
+ * defaults
  **/
 body {
 	color: #fff;
-	font-family:'lucida grande',verdana,helvetica,arial,sans-serif;
-	font-size:90%;
-	color: black;
-}
-body, div#error {
-	margin: 25px;
-}
-body, div.link {
-	background-color: #ff6600;
+    font-family: verdana;
+    font-size: 90%;
+    color: black;
+    background-color: #ff6600;
 }
 
-a {
-	color: blue;
-}
-a img {
-	border: 0;
+div.link {
+    margin: 0 1em 0 0;
 }
 
-a.died {
-	color: Maroon;
+div.submit {
+	margin: 1em;
 }
 
-a, div.people dt, ul.tree li {
-	font-weight: bold;
+div.admin_bar {
+	font-size: 60%;
 }
 
-.form label, div.people dt {
-	width: 20%;
+/**
+ * styles for more elements
+ **/
+
+body, dd a {
+    font-weight: bold;
 }
 
-div#logo, div#flash h2, div.people h2 {
-	text-align: center;
+div#logo, h2 {
+    text-align: center;
 }
 
-div.people dt, div.people dd, ul.tree li{
-	line-height: 1.5em;
+div.link, dt, label {
+    float: left;
 }
 
-div.people dd{
-	margin: -1.5em 0 0 20%;
+/**
+ * Modalbox & forms
+ **/
+label {
+	width: 8em;
+}
+dd, input[type="text"], input[type="password"], textarea {
+	font-weight: normal;
 }
 
-div.people dd a, ul.tree li{
-	margin: 0;
+dd {
+	margin: 0 0 0 8em;
 }
 
-ul.tree, ul.tree ul, li { 
-	list-style-type: none; 
+/**
+ * setup the tree
+ **/
+li, ul {
+    list-style-type: none;
+    padding: 0;
+} 
+
+ul.tree, ul.tree ul { 
+	background: url(../img/vline.png) repeat-y; 
+	margin: 0; 
 	padding: 0; 
 }
-ul.tree ul, div.small, div.description { 
+
+ul.tree ul { 
 	margin-left: 10px;
 }
+
 ul.tree li { 
+	margin: 0; 
 	padding: 0 12px; 
+	line-height: 20px; 
 	background: url(../img/node.png) no-repeat; 
 	color: #369; 
+	font-weight: bold; 
 }
+
 ul.tree li:last-child { 
-	background: #ff6600 url(../img/lastnode.png) no-repeat;
-	width: 100%; 
-}
-
-div.small {
-	padding-left: 5px;
-	font-size: 10px;
-	clear: left;
-}
-
-ul.tree, ul.tree ul, div.small {
-	background: url(../img/vline.png) repeat-y; 
-}
-
-div.small:last-child {
-	background-image: none;
-}
-
-.form label, div.person, div.link, div.description, ul.tree li:last-child {
-	float: left;
-}
-
-div.person {
-	background: url(../img/vline.png) repeat-y 10px; 
-	width: 100%;
-}
-div.link {
-	max-width: 20%;
-}
-div.description {
-	width: 80%;
-}
+	background: #ff6600 url(../img/lastnode.png) no-repeat; 
+} 

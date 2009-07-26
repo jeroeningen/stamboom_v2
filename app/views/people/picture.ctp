@@ -1,5 +1,5 @@
 <?php
-	if ($this->params['named']['small']) {
+	if (!empty($this->params['named']['small'])) {
 		if (empty($person['Person']['picture'])) {
 			$person['Person']['picture'] = 'no_picture.jpg';
 		}
