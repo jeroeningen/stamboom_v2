@@ -7,14 +7,25 @@ class Person extends AppModel {
 	var $actsAs = array('Tree');
 	
 	var $validate = array(
-		'name' => array('blank' =>
-			array(
-				'rule' => array('minLength',1),
-				'required' => true,
-				'message' => 'Vul een naam in.'
-			)
-		),
-		'born_intro' => array(
+        'name' => array('blank' =>
+            array(
+                'rule' => 'notEmpty',
+                'required' => true,
+                'message' => 'Vul een naam in.'
+            )
+        ),
+       'status' => array('blank' =>
+            array(
+                'rule' => 'notEmpty',
+                'required' => true,
+                'message' => 'Vul een staus in.'
+            ),
+            'allowedChoice' => array(
+                'rule' => array('inList', array('Lid', 'Reunist', 'Overleden')),
+                'message' => 'Toegestane waardes: \'Lid\',\'Reunist\' en \'Overleden\'',
+            ),
+        ),
+        'born_intro' => array(
 			'allowedChoice' => array(
 				'rule' => array('inList', array('', 'intro', 'na-intro')),
 				'message' => 'Toegestane waardes: \'intro\' en \'na-intro\'',
@@ -26,14 +37,14 @@ class Person extends AppModel {
 				'message' => 'Toegestane waardes: \'intro\' en \'na-intro\'',
 			),
 		),
-		);
+	);
 		
 	/**
 	 * find the data sorted for the tree
 	 * @return array $tree tree_data
 	 */
 	function findForTree() {
-		return $this->find('all', array('fields' => array('id', 'name', 'description', 'picture', 'parent_id', 'lft', 'rght'), 'order' => 'lft ASC'));
+		return $this->find('all', array('fields' => array('id', 'name', 'description', 'picture', 'died_year','parent_id', 'lft', 'rght'), 'order' => 'lft ASC'));
 	}
 	
 	/**
@@ -57,7 +68,7 @@ class Person extends AppModel {
 	 */
 	function forumLogin($data) {
 		$this->useDbConfig = 'forum';
-		$forumdata = $this->query("SELECT realname, passwd FROM smf_members WHERE memberName='".mysql_real_escape_string($data['Person']['username'])."' 
+		$forumdata = $this->query("SELECT realname, memberName FROM smf_members WHERE memberName='".mysql_real_escape_string($data['Person']['username'])."' 
 			AND passwd='".sha1(mysql_real_escape_string(strtolower($data['Person']['username'])) . mysql_real_escape_string($data['Person']['password']))."'");
 		$this->useDbConfig = 'default';
 	    return $forumdata;

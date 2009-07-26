@@ -33,17 +33,16 @@ class PeopleController extends AppController {
 		}
 	}
 	
+	//function to send the complain-mail
 	function complain($name) {
-	   $person = $this->Person->getForumDataByUsername($name);
-	   $from = $person['smf_members']['realname'] . "<" . $person['smf_members']['emailAddress']; 
+       $person = $this->Person->getForumDataByUsername($name);
+	   $from = $person['smf_members']['emailAddress'];
 	   $this->Email->sendAs = 'html';
-	   $this->Email->to = "tom@svliber.nl <jeroeningen@gmail.com>";
+	   $this->Email->to = "vingen@zonnet.nl";
        $this->Email->bcc = array($from);
        $this->Email->from = $from;
        $this->Email->subject = "Aan de slag!";
-       pr($this->Email->send(array("Welverdorie, ben je nu onze geliefde " . $person['smf_members']['realname'] . "vergeten? Waar wacht je nog op, toevoegen die handel!")));
-       
-	   exit();
+       $this->Email->send(array("Welverdorie, ben je nu onze geliefde " . $person['smf_members']['realname'] . " vergeten? Waar wacht je nog op, toevoegen die handel!"));
 	}
 	
 	function picture($id = null) {
@@ -88,13 +87,16 @@ class PeopleController extends AppController {
 	function login() {
 	    $this->set('modalbox_login', array('onclick' => 'Modalbox.show(this.form.action, {method: \'post\', params: Form.serialize(this.form.id)})'));
 		if (!empty($this->data)) {
-			if ($person = $this->Person->forumLogin($this->data)) {
-				if ($person = $this->Person->findByName($person[0]['smf_members']['realname'])) {
+			if ($forum = $this->Person->forumLogin($this->data)) {
+			     if ($person = $this->Person->findByName($forum[0]['smf_members']['realname'])) {
 					$this->Session->write('person', $person);
 					$this->Session->setFlash('Dag '.$person['Person']['name']);
+					exit();
 					$this->redirect(array('controller' => 'pages', 'action' => 'hide'));
 				} else {
-					$this->Session->setFlash('Sorry, je bent nog niet toegevoegd aan de stamboom. <a href="mailto:tom@svliber.nl?subject=Tom, dit is weer een punt voor Leon">Hier</a> kun je erover klagen.');
+                    $url = $this->base.'/people/complain/'.$forum[0]['smf_members']['memberName'];
+				    $link = '<a onclick="Modalbox.show(this.href);return false;" href="'.$url.'">Klik hier</a>';
+					$this->Session->setFlash('Sorry, je bent nog niet toegevoegd aan de stamboom. '. $link .' om te klagen.');
 				}
 			} else {
 				$this->Session->setFlash('Foute gebruiksnaam en/of wachtwoord');
@@ -223,7 +225,6 @@ class PeopleController extends AppController {
 			$this->Person->save($this->data);
 			$this->redirect(array('action' => 'index'));
 		}
-		//$this->set('swfupload', true);
 		$this->data = $this->Person->read(null, $id);
 		$this->layout = 'default';
 	}

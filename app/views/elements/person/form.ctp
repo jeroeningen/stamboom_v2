@@ -42,6 +42,7 @@
 		echo $form->label('Overleden');
 		echo $form->select('died_intro', $intro);
 		echo $form->select('died_year', $years).'<br />';
+		echo $form->input('status', array('options' => array('' => '', 'Lid' => 'Lid', 'Reunist' => 'Reunist', 'Overleden' => 'Overleden')));
 	}
 ?>
 	</fieldset>

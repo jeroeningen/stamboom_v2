@@ -20,6 +20,11 @@ a {
 a img {
 	border: 0;
 }
+
+a.died {
+	color: Maroon;
+}
+
 a, div.people dt, ul.tree li {
 	font-weight: bold;
 }
