@@ -25,9 +25,8 @@
 	echo '<div class="description">'.$data['Person']['description'].'</div>';
 	echo '</div>';
 	unset($modalbox['class']);
-	
 	//set links for admin
-	if (!empty($authUser)) {
+	if (!empty($authUser) && $authUser['User']['username'] == 'admin') {
 		echo '<div class="admin_bar">'.$html->link('Bewerk', array('controller' => 'people', 'action' => 'edit', 'id' => $data['Person']['id'], 'admin' => 1), $modalbox).' '.
 			$html->link('Voeg jojo toe', array('controller' => 'people', 'action' => 'add', 'parent_id' => $data['Person']['id'], 'admin' => 1), $modalbox).' '.
 			$html->link('Verwijder Libertijn en jojo\'s', array('controller' => 'people', 'action' => 'delete', 'id' => $data['Person']['id'], 'admin' => 1)).' '.

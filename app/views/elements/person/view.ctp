@@ -55,12 +55,11 @@
 	</dl>
 </div>
 <?php
-	if(!empty($authUser)) {
+	if(!empty($authUser) && $authUser['User']['username'] == 'admin') {
 ?>
 <div class="actions">
 	<ul>
 		<li><?php echo $html->link(__('Wijzig Libertijn', true), array('action'=>'edit', $person['Person']['id'], 'admin' => 1), $modalbox); ?> </li>
-		<li><?php echo $html->link(__('Liber stamboom', true), array('action'=>'index')); ?> </li>
 		<li><?php echo $html->link(__('Nieuwe Libertijn', true), array('action'=>'add', 'admin' => 1), $modalbox); ?> </li>
 	</ul>
 </div>

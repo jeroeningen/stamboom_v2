@@ -62,9 +62,11 @@ class AppController extends Controller {
 		
 		//Set security temporary lower to reload page with javascript
 		Configure::write('Security.level', 'medium');
+		
 		if ($this->Auth->user()) {
 			$this->set('authUser', $this->Auth->user());
 		}
+		
 		Configure::write('Security.level', 'high');
 		
 	}

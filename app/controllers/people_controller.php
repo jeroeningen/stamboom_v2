@@ -8,7 +8,10 @@ class PeopleController extends AppController {
 
 	function beforeFilter() {
 		parent::beforeFilter();
-		$this->Auth->allowedActions = array('index', 'view', 'login', 'logout', 'edit', 'upload', 'picture', 'picture_delete', 'complain');
+		$this->Auth->allowedActions = array('index', 'view', 'login', 'logout','picture' , 'complain');
+		if ($this->Session->read('person')) {
+            $this->set('person', $this->Person->read('picture', $this->Session->read('person')));
+        }
 		
 		//do the necessary things for modalbox
 		$this->layout = 'popup';
@@ -23,13 +26,12 @@ class PeopleController extends AppController {
 	}
 	
 	function edit() {
-		if(isset($this->data['Person']['description'])) {
-			$person = $this->Session->read('person');
-			$this->Person->read(null, $person['Person']['id']);
+		if(!empty($this->data)) {
+			$this->Person->read(null, $this->Session->read('person'));
 			$this->Person->saveField('description', $this->data['Person']['description']);
-			$this->redirect(array('controller' => 'people', 'action' => 'view', 'id' => $person['Person']['id']));
-		} else if(!$this->data = $this->Session->read('person')) {
-			$this->redirect(array('action' => 'login'));
+			$this->redirect(array('controller' => 'people', 'action' => 'view', 'id' => $person));
+		} else {
+		    $this->data = $this->Person->read(null, $this->Session->read('person'));
 		}
 	}
 	
@@ -38,7 +40,7 @@ class PeopleController extends AppController {
        $person = $this->Person->getForumDataByUsername($name);
 	   $from = $person['smf_members']['emailAddress'];
 	   $this->Email->sendAs = 'html';
-	   $this->Email->to = "vingen@zonnet.nl";
+	   $this->Email->to = "tom@svliber.nl";
        $this->Email->bcc = array($from);
        $this->Email->from = $from;
        $this->Email->subject = "Aan de slag!";
@@ -60,31 +62,23 @@ class PeopleController extends AppController {
 				$this->__deleteImage($this->data['Person']['picture']);
 			}
 			$this->data['Person']['picture'] = $this->Image->upload_image_and_thumbnail($this->data,"picture",573,80,"people",true);
-			$person = $this->Session->read('person');
-			$person = $this->Person->read(null, $person['Person']['id']);
+			$this->Person->read(null, $this->Session->read('person'));
 			$this->Person->save($this->data);
-			$person = $this->Person->read(null, $person['Person']['id']);
-			$this->Session->write('person', $person);
 			$this->redirect(array('action' => 'index'));
-		} else if(!$this->data = $this->Session->read('person')) {
-			$this->redirect(array('action' => 'login'));
 		}
 		
-		$person = $this->Session->read('person');
-		$this->data = $this->Person->read(null, $person['Person']['id']);
+		$this->data = $this->Person->read(null, $this->Session->read('person'));
 	}
 	
 	//function to let the forumuser delete his image 
     function picture_delete() {
-		$person = $this->Session->read('person');
-		$person = $this->Person->read(null, $person['Person']['id']);
+		$person = $this->Person->read(null, $this->Session->read('person'));
 		if (!empty($person['Person']['picture'])) {
 			$this->__deleteImage($person['Person']['picture']);
 		}
 		$person['Person']['picture'] = "";
 		$this->Person->save($person);
-		$this->Session->write('person', $person);
-		$this->redirect(array('action'=>'index'));
+		$this->redirect($this->referer());
 	}
 	
 	//function to login a forumuser
@@ -93,9 +87,9 @@ class PeopleController extends AppController {
 		if (!empty($this->data)) {
 			if ($forum = $this->Person->forumLogin($this->data)) {
 			     if ($person = $this->Person->findByName($forum[0]['smf_members']['realname'])) {
-					$this->Session->write('person', $person);
-					$this->Session->setFlash('Dag '.$person['Person']['name']);
-					exit();
+					$this->Session->write('person', $person['Person']['id']);
+			        $this->Auth->login(array('username' => 'guest', 'password' => $this->Auth->password('mafketel')));
+			        $this->Session->setFlash('Dag '.$person['Person']['name']);
 					$this->redirect(array('controller' => 'pages', 'action' => 'hide'));
 				} else {
                     $url = $this->base.'/people/complain/'.$forum[0]['smf_members']['memberName'];
@@ -112,7 +106,7 @@ class PeopleController extends AppController {
 	
     //function to logout a forumuser
 	function logout() {
-		$this->Session->del('person');
+		$this->Auth->logout();
 		$this->Session->setFlash('DOEI!');
 		$this->redirect('/');
 	}

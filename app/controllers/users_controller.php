@@ -7,7 +7,7 @@ class UsersController extends AppController {
 	
 	function beforeFilter() {
 		parent::beforeFilter(); 
-		$this->Auth->allowedActions = array('login', 'logout', 'index', 'view');
+		$this->Auth->allowedActions = array('login', 'logout');
 	}
 	
 	/**
@@ -17,7 +17,7 @@ class UsersController extends AppController {
 	 * @return unknown_type
 	 */
 	function createAcl() {
-		$this->Acl->allow('admin', 'controllers/Users/createAcl');
+		/**$this->Acl->allow('admin', 'controllers/Users/createAcl');
 		$this->Acl->allow('admin', 'controllers/Users/admin_index');
 		$this->Acl->allow('admin', 'controllers/Users/admin_add');
 		$this->Acl->allow('admin', 'controllers/Users/admin_edit');
@@ -31,6 +31,10 @@ class UsersController extends AppController {
 		$this->Acl->allow('admin', 'controllers/People/admin_upload');
 		$this->Acl->allow('admin', 'controllers/People/admin_picture_delete');
 		$this->Acl->allow('admin', 'controllers/Pages/display');
+		$this->Acl->allow('guest', 'controllers/People/edit');
+        $this->Acl->allow('guest', 'controllers/People/upload');
+        $this->Acl->allow('guest', 'controllers/People/picture_delete');
+		**/
 	}
 	
 	function login() {

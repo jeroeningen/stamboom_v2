@@ -6,7 +6,7 @@
 	} else {
 		echo $tree->generate($people, array('element' => 'person/tree', 'class' => 'tree'));
 	}
-	if (!empty($authUser)) {
+	if (!empty($authUser) && $authUser['User']['username'] == 'admin') {
 ?>
 <div class="actions">
 	<ul>
