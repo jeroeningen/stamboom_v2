@@ -21,6 +21,14 @@ div.admin_bar {
 	font-size: 60%;
 }
 
+a {
+    color: blue;
+}
+
+a.died {
+    color: Maroon;
+}
+
 /**
  * styles for more elements
  **/
