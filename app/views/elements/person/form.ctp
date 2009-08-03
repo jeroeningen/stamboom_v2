@@ -1,8 +1,6 @@
 <div class="people form">
 <?php
-	echo $javascript->includeScript('focus');
-
-	echo $form->create('Person', array('url' => array('action' => $this->action),'onsubmit' => 'return false;'));
+	echo $form->create('Person', array('url' => array('action' => $this->action), 'id' => 'person_form'));
 
 	//create options for selectboxes
 	$years = array();
@@ -41,5 +39,5 @@
 	}
 ?>
 	</fieldset>
-<?php echo $form->end(array('value' => 'Verzend', 'onclick' => 'Modalbox.show(this.form.action, {title: this.title, width: 600, params: Form.serialize(this.form), method: \'post\'}); return false;'));?>
+<?php echo $form->end(array('value' => 'Verzend', 'id' => 'person_submit'));?>
 </div>

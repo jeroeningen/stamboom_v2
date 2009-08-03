@@ -1,6 +1,6 @@
 <div class="form">
 <h2><?php  __('Login voor Stamboombeheerder');?></h2>
-<?php echo $form->create($this->model, array('url' => array('controller' => strtolower($this->name), 'action' =>'login')));?>
+<?php echo $form->create($this->model, array('url' => array( 'action' =>'login'), 'id' => 'user_form'));?>
 	<fieldset>
  		<legend><?php __($this->model.' Login');?></legend>
 		<?php
@@ -9,6 +9,3 @@
 	</fieldset>
 <?php echo $form->end('Login');?>
 </div>
-<?php
-	echo $javascript->includeScript('focus');
-?>

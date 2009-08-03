@@ -9,14 +9,14 @@ class PeopleController extends AppController {
 	function beforeFilter() {
 		parent::beforeFilter();
 		$this->Auth->allowedActions = array('index', 'view', 'login', 'logout','picture' , 'complain');
+		
+		//get the picture of the logged in user
 		if ($this->Session->read('person')) {
             $this->set('person', $this->Person->read('picture', $this->Session->read('person')));
         }
 		
-		//do the necessary things for modalbox
+		//set the default layout to modalbox
 		$this->layout = 'popup';
-        $this->set('modalbox', array('onclick' => 'Modalbox.show(this.href, {title: this.title, afterHide: function() {location.href = document.location}, width: 600, params: null, autoFocusing: true}); return false;'));
-        $this->set('modalbox_picture', array('onclick' => 'Modalbox.show(this.href, {title: this.title, afterHide: function() {location.href = document.location}, width: 600, method: \'post\', autoFocusing: true}); return false;'));
 	}
 	
 	function index() {
@@ -25,11 +25,12 @@ class PeopleController extends AppController {
 		$this->set('people', $this->Person->findForTree());
 	}
 	
+	//edit action for forumuser (uses guest account)
 	function edit() {
 		if(!empty($this->data)) {
 			$this->Person->read(null, $this->Session->read('person'));
 			$this->Person->saveField('description', $this->data['Person']['description']);
-			$this->redirect(array('controller' => 'people', 'action' => 'view', 'id' => $person));
+			$this->redirect(array('controller' => 'people', 'action' => 'view', 'id' => $this->Session->read('person')));
 		} else {
 		    $this->data = $this->Person->read(null, $this->Session->read('person'));
 		}
@@ -58,8 +59,10 @@ class PeopleController extends AppController {
 	//function to let the forumuser upload an image 
 	function upload() {
 		 if (!empty($this->data['Image']['picture']['name'])) {
-			if (!empty($this->data['Person']['picture'])) {
-				$this->__deleteImage($this->data['Person']['picture']);
+			//if image exists delete it
+			$person = $this->Person->read('picture', $this->Session->read('person'));
+		    if (!empty($person['Person']['picture'])) {
+				$this->__deleteImage($person['Person']['picture']);
 			}
 			$this->data['Person']['picture'] = $this->Image->upload_image_and_thumbnail($this->data,"picture",573,80,"people",true);
 			$this->Person->read(null, $this->Session->read('person'));
@@ -83,17 +86,17 @@ class PeopleController extends AppController {
 	
 	//function to login a forumuser
 	function login() {
-	    $this->set('modalbox_login', array('onclick' => 'Modalbox.show(this.form.action, {method: \'post\', params: Form.serialize(this.form.id)})'));
-		if (!empty($this->data)) {
+	    if (!empty($this->data)) {
 			if ($forum = $this->Person->forumLogin($this->data)) {
 			     if ($person = $this->Person->findByName($forum[0]['smf_members']['realname'])) {
+			        //login as guest and bind the personid to the session
 					$this->Session->write('person', $person['Person']['id']);
 			        $this->Auth->login(array('username' => 'guest', 'password' => $this->Auth->password('mafketel')));
 			        $this->Session->setFlash('Dag '.$person['Person']['name']);
 					$this->redirect(array('controller' => 'pages', 'action' => 'hide'));
 				} else {
-                    $url = $this->base.'/people/complain/'.$forum[0]['smf_members']['memberName'];
-				    $link = '<a onclick="Modalbox.show(this.href);return false;" href="'.$url.'">Klik hier</a>';
+				    //set link to complain
+                    $link = '<a id="complain_link" href="'.$this->base.'/people/complain/'.$forum[0]['smf_members']['memberName'].'">Klik hier</a>';
 					$this->Session->setFlash('Sorry, je bent nog niet toegevoegd aan de stamboom. '. $link .' om te klagen.');
 				}
 			} else {
@@ -162,10 +165,12 @@ class PeopleController extends AppController {
 			if ($this->Person->save($this->data)) {
 				$this->redirect(array('controller' => 'pages', 'action' => 'hide'));
 			} else {
-				$this->Session->setFlash(__('The Person could not be saved. Please, try again.', true));
+			    //set the id for in the URL
+				$this->data['Person']['id'] = $id;
+                $this->Session->setFlash(__('The Person could not be saved. Please, try again.', true));
 			}
 		} else {
-			$this->data = $this->Person->read(null, $id);
+    		$this->data = $this->Person->read(null, $id);
 		}
 		$this->set('people', $this->Person->find('list', 
 			array('fields' => array('id', 'name'),
@@ -218,8 +223,10 @@ class PeopleController extends AppController {
 		}
 		
 		if (!empty($this->data['Image']['picture']['name'])) {
-			if (!empty($this->data['Person']['picture'])) {
-				$this->__deleteImage($this->data['Person']['picture']);
+			$person = $this->Person->read('picture', $id);
+            //if image exists, delete it
+			if (!empty($person['Person']['picture'])) {
+            	$this->__deleteImage($person['Person']['picture']);
 			}
 			$this->data['Person']['picture'] = $this->Image->upload_image_and_thumbnail($this->data,"picture",573,80,"people",true);
 			$this->Person->read(null, $id);

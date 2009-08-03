@@ -13,7 +13,8 @@
 		echo $javascript->link('scriptaculous.js');
 		echo $javascript->link('prototip.js');
 		echo $javascript->link('modalbox.js');
-		echo $html->css('modalbox');
+        echo $javascript->link($this->name);
+        echo $html->css('modalbox');
 		echo $html->css('prototip');
 	}
 	?>

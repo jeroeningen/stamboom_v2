@@ -1,7 +1,12 @@
 <div id="container-popup">
+<?php
+    if(isset($javascript)) {
+        echo $javascript->includeScript($this->name);
+    }
+?>
 	<div id="frame-popup">
 		<div id="header-popup">
-		<a href="" title="Close window" onclick="Modalbox.hide({afterHide: function() { location.href = document.location; } });">x</a>
+		<a href="" title="Close window" class="modalbox_close">x</a>
 		</div>
 		<div id="flash">
 				<h2><?php $session->flash(); ?></h2>

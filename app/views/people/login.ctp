@@ -1,13 +1,10 @@
 <div class="form">
-<?php echo $form->create($this->model, array('url' => array('controller' => strtolower($this->name), 'action' => 'login'), 'onsubmit' => 'return false;')); ?>
+<?php echo $form->create($this->model, array('url' => array('controller' => strtolower($this->name), 'action' => 'login'), 'id' => 'person_form')); ?>
 	<fieldset>
  		<legend><?php __($this->model.' Login');?></legend>
 		<?php
 			echo $this->element('login');
 		?>
 	</fieldset>
-<?php echo $form->end(array('Login', key($modalbox_login) => current($modalbox_login)));?>
+<?php echo $form->end(array('value' => 'Login', 'id' => 'person_submit'));?>
 </div>
-<?php
-	echo $javascript->includeScript('focus');
-?>

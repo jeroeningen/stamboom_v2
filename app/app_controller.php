@@ -34,7 +34,7 @@ class AppController extends Controller {
 	 *
 	 * @var array
 	 */
-	var $helpers = array('Ajax', 'Javascript');
+	var $helpers = array('Javascript');
 	
 	/**
 	 * AuthComponent
