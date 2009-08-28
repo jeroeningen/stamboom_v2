@@ -45,6 +45,10 @@ div.link, dt, label {
     float: left;
 }
 
+div.description {
+	display: inline-block;
+}
+
 /**
  * Modalbox & forms
  **/
