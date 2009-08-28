@@ -33,6 +33,8 @@ class PeopleController extends AppController {
 			$this->redirect(array('controller' => 'people', 'action' => 'view', 'id' => $this->Session->read('person')));
 		} else {
 		    $this->data = $this->Person->read(null, $this->Session->read('person'));
+		    //do not set ID in url
+		    unset($this->data['Person']['id']);
 		}
 	}
 	

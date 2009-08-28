@@ -10,7 +10,7 @@
 	
 	//set menu for logged in user
 	if ($this->name == 'People' && !empty($authUser) && $authUser['User']['username'] == 'guest') {
-		echo $html->link('Wijzig je beschrijving', array('controller' => 'people', 'action' => 'edit', 'admin' => 0), array('class' => 'modalbox_link')).' ';
+		echo $html->link('Wijzig je beschrijving', array('controller' => 'people', 'action' => 'edit', 'admin' => 0, 'id' => null), array('class' => 'modalbox_link')).' ';
 		echo $html->link('Upload je foto', array('controller' => 'people', 'action' => 'upload', 'admin' => 0), array('id' => 'picture_link')).' ';
 		if (!empty($person['Person']['picture'])) {
 			echo $html->link('Verwjder je foto', array('controller' => 'people', 'action' => 'picture_delete', 'admin' => 0), array('id' => 'picture_delete')).' ';
