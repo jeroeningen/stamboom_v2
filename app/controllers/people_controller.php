@@ -28,7 +28,10 @@ class PeopleController extends AppController {
 	//edit action for forumuser (uses guest account)
 	function edit() {
 		if(!empty($this->data)) {
-			$this->Person->read(null, $this->Session->read('person'));
+		    //prevent from html-injection
+		    //$this->data['Person']['description'] = strip_tags($this->data['Person']['description'], '<a><b>');
+		    
+		    $this->Person->read(null, $this->Session->read('person'));
 			$this->Person->saveField('description', $this->data['Person']['description']);
 			$this->redirect(array('controller' => 'people', 'action' => 'view', 'id' => $this->Session->read('person')));
 		} else {

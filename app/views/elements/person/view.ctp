@@ -15,7 +15,7 @@
 		</dd>
         <dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Beschrijving'); ?></dt>
         <dd<?php if ($i++ % 2 == 0) echo $class;?>>
-            <?php echo $person['Person']['description']; ?>
+            <?php echo nl2br($person['Person']['description']); ?>
             &nbsp;
         </dd>
         <dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Status'); ?></dt>

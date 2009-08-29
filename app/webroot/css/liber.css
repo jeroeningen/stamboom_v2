@@ -41,26 +41,20 @@ div#logo, h2 {
     text-align: center;
 }
 
-div.link, dt, label {
-    float: left;
-}
-
-div.description {
-	display: inline-block;
-}
-
 /**
  * Modalbox & forms
  **/
 label {
+	margin: 0 1em;
 	width: 8em;
+	display: inline-block;
 }
 dd, input[type="text"], input[type="password"], textarea {
 	font-weight: normal;
 }
 
 dd {
-	margin: 0 0 0 8em;
+	margin: 0 0 1em 3em;
 }
 
 /**

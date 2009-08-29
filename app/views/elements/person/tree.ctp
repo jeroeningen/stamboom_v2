@@ -26,7 +26,9 @@
     		array('class' => 'modalbox_link')).'</div>';
 	}
 
-	echo '<div class="description">'.$data['Person']['description'].'</div>';
+	if (!empty($data['Person']['description'])) {
+		echo '<div class="description">'.nl2br($data['Person']['description']).'</div>';
+	}
 	echo '</div>';
 	
 	//set links for admin

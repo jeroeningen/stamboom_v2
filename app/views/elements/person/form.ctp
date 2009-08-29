@@ -18,10 +18,15 @@
 	} elseif(strstr($this->params['action'], 'edit')) {
 		$parent = $this->data['Person']['parent_id'];
 	}
+	
+	//fields only for admin
 	if (!empty($authUser) && $authUser['User']['username'] == 'admin') {
 		echo $form->input('name', array('label' => 'Naam')).'<br />';
 	}
+	
 	echo $form->input('description', array('label' => 'Beschrijving')).'<br />';
+	
+	//fields only for admin
 	if (!empty($authUser) && $authUser['User']['username'] == 'admin') {
 		if (!empty($this->params['named']['parent_id'])) {
 			echo $form->hidden('parent_id', array('value' => $parent));
