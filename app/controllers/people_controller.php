@@ -29,7 +29,7 @@ class PeopleController extends AppController {
 	function edit() {
 		if(!empty($this->data)) {
 		    //prevent from html-injection
-		    //$this->data['Person']['description'] = strip_tags($this->data['Person']['description'], '<a><b>');
+		    $this->data['Person']['description'] = strip_tags($this->data['Person']['description'], '<a><b>');
 		    
 		    $this->Person->read(null, $this->Session->read('person'));
 			$this->Person->saveField('description', $this->data['Person']['description']);
@@ -92,8 +92,14 @@ class PeopleController extends AppController {
 	//function to login a forumuser
 	function login() {
 	    if (!empty($this->data)) {
+	        //use the forumdatabase to login
 			if ($forum = $this->Person->forumLogin($this->data)) {
-			     if ($person = $this->Person->findByName($forum[0]['smf_members']['realname'])) {
+			     //check if the person in the tree still has the status 'Lid'
+			     if ($person = $this->Person->find('first', 
+			        array('conditions' => array(
+			        	'status' => 'Lid',
+      			        'name' => $forum[0]['smf_members']['realname'])
+      			    ))) {
 			        //login as guest and bind the personid to the session
 					$this->Session->write('person', $person['Person']['id']);
 			        $this->Auth->login(array('username' => 'guest', 'password' => $this->Auth->password('mafketel')));

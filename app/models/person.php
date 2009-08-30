@@ -12,6 +12,10 @@ class Person extends AppModel {
                 'rule' => 'notEmpty',
                 'required' => true,
                 'message' => 'Vul een naam in.'
+            ),
+            array(
+            	'rule' => 'checkStatusLid',
+                'message' => 'Sorry, er bestaat al een lid met deze naam.'
             )
         ),
        'status' => array('blank' =>
@@ -24,6 +28,14 @@ class Person extends AppModel {
                 'rule' => array('inList', array('Lid', 'Reunist', 'Overleden')),
                 'message' => 'Toegestane waardes: \'Lid\',\'Reunist\' en \'Overleden\'',
             ),
+            'diedSince' => array(
+                'rule' => 'checkDiedDate',
+                'message' => 'Vul de datum van overlijden in'
+            ),
+            'notDied' => array(
+                'rule' => 'checkNotDied',
+                'message' => 'De status moet \'overleden\' zijn als de overlijdensdatum is ingevuld'
+            )
         ),
         'born_intro' => array(
 			'allowedChoice' => array(
@@ -77,7 +89,7 @@ class Person extends AppModel {
 	/**
 	 * Get the email and rrealname of a user
 	 * @param $username
-	 * @return unknown_type
+	 * @return boolean
 	 */
 	function getForumDataByUsername($username) {
         $this->useDbConfig = 'forum';
@@ -86,5 +98,51 @@ class Person extends AppModel {
         return $forumdata[0];
 	}
 	
+	/**
+	 * Check if there is another user exists with the same name and status 'Lid'
+	 * @return boolean
+	 */
+	function checkStatusLid() {
+	   if ($this->data['Person']['status'] != 'Lid') {
+	      return true;
+	   } else if ($this->find('first', array('conditions' => 
+	      array('name' => $this->data['Person']['name'],
+	         'status'=> 'Lid', 
+	         'NOT' => 
+	            array('id' => $this->id)) 
+	      ))) {
+	      return false;
+       } else {
+          return true;
+       }
+	}
+	
+	/**
+	 * If status is 'Oveleden', died date must filled in
+	 * @return boolean
+	 */
+	function checkDiedDate() {
+	   if ($this->data['Person']['status'] == 'Overleden' &&
+	      (empty($this->data['Person']['died_year']) || 
+	      empty($this->data['Person']['died_intro']))) {
+	      return false;
+	   } else {
+	      return true;
+	   }
+	}
+	
+	/**
+	 * Check if status is correct if died date is filled in
+	 * @return boolean
+	 */
+	function checkNotDied() {
+	   if ($this->data['Person']['status'] != 'Overleden' &&
+	      (!empty($this->data['Person']['died_year']) || 
+	      !empty($this->data['Person']['died_intro']))) {
+	      return false;
+	   } else {
+	      return true;
+	   }
+    }
 }
 ?>
