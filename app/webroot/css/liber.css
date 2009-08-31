@@ -85,6 +85,6 @@ ul.tree li {
 	font-weight: bold; 
 }
 
-ul.tree li:last-child { 
+ul.tree li.last { 
 	background: #ff6600 url(../img/lastnode.png) no-repeat; 
 } 

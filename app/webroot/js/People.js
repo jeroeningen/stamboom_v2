@@ -50,6 +50,11 @@ document.observe('dom:loaded', function() {
 			}
 		});
 	}
+
+	//set class for last childnode in tree
+	$$('ul').each(function(list) {
+		 $($(list.immediateDescendants()).last()).addClassName('last');
+	});
 });
 
 //Bind modalbox to links
