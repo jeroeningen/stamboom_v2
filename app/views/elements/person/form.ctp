@@ -35,10 +35,9 @@
 			echo $form->select('parent_id', $people, array('selected' => $parent)).'<br />';
 		}
 		echo $form->label('Geboren');
-		echo $form->select('born_intro', $intro);
+        echo $form->select('born_intro', $intro);
 		echo $form->select('born_year', $years).'<br />';
 		echo $form->label('Overleden');
-		echo $form->select('died_intro', $intro);
 		echo $form->select('died_year', $years).'<br />';
 		echo $form->input('status', array('options' => array('' => '', 'Lid' => 'Lid', 'Reunist' => 'Reunist', 'Overleden' => 'Overleden')));
 	}

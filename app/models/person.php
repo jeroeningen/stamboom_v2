@@ -28,22 +28,12 @@ class Person extends AppModel {
                 'rule' => array('inList', array('Lid', 'Reunist', 'Overleden')),
                 'message' => 'Toegestane waardes: \'Lid\',\'Reunist\' en \'Overleden\'',
             ),
-            'diedSince' => array(
-                'rule' => 'checkDiedDate',
-                'message' => 'Vul de datum van overlijden in'
-            ),
             'notDied' => array(
                 'rule' => 'checkNotDied',
                 'message' => 'De status moet \'overleden\' zijn als de overlijdensdatum is ingevuld'
             )
         ),
         'born_intro' => array(
-			'allowedChoice' => array(
-				'rule' => array('inList', array('', 'intro', 'na-intro')),
-				'message' => 'Toegestane waardes: \'intro\' en \'na-intro\'',
-			),
-		),
-		'died_intro' => array(
 			'allowedChoice' => array(
 				'rule' => array('inList', array('', 'intro', 'na-intro')),
 				'message' => 'Toegestane waardes: \'intro\' en \'na-intro\'',
@@ -56,7 +46,7 @@ class Person extends AppModel {
 	 * @return array $tree tree_data
 	 */
 	function findForTree() {
-		return $this->find('all', array('fields' => array('id', 'name', 'description', 'picture', 'died_year','parent_id', 'lft', 'rght'), 'order' => 'lft ASC'));
+		return $this->find('all', array('fields' => array('id', 'name', 'description', 'picture', 'status','parent_id', 'lft', 'rght'), 'order' => 'lft ASC'));
 	}
 	
 	/**
@@ -115,20 +105,6 @@ class Person extends AppModel {
        } else {
           return true;
        }
-	}
-	
-	/**
-	 * If status is 'Oveleden', died date must filled in
-	 * @return boolean
-	 */
-	function checkDiedDate() {
-	   if ($this->data['Person']['status'] == 'Overleden' &&
-	      (empty($this->data['Person']['died_year']) || 
-	      empty($this->data['Person']['died_intro']))) {
-	      return false;
-	   } else {
-	      return true;
-	   }
 	}
 	
 	/**

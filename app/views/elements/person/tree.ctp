@@ -16,7 +16,7 @@
 	}
 	
 	//if person is died set other link color and unset it for the next links
-	if ($data['Person']['died_year'] != 0000 && $data['Person']['died_year'] <= date("Y")) {
+	if ($data['Person']['status'] == 'Overleden') {
         echo $html->link($data['Person']['name'], 
             array('controller' => 'people', 'action' => 'view', 'id' => $data['Person']['id']), 
             array('class' => 'modalbox_link died')).'</div>';
