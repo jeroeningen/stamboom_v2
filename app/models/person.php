@@ -42,11 +42,12 @@ class Person extends AppModel {
 	);
 		
 	/**
+	 * TODO: sort jojo's on date of birth
 	 * find the data sorted for the tree
 	 * @return array $tree tree_data
 	 */
 	function findForTree() {
-		return $this->find('all', array('fields' => array('id', 'name', 'description', 'picture', 'status','parent_id', 'lft', 'rght'), 'order' => 'lft ASC'));
+	   return $this->find('all', array('fields' => array('id', 'name', 'description', 'picture', 'status','parent_id', 'lft', 'rght'), 'order' => 'lft ASC'));
 	}
 	
 	/**
@@ -61,6 +62,21 @@ class Person extends AppModel {
 		$person['Parent'] = $parent['Person'];
 		$person['Children'] = $children;
 		return $person;
+	}
+	
+	/**
+	 * Find all the persons for the parent list sorted by name  
+	 * except the person with the given id
+	 * 
+	 * @param $id person_id
+	 * @return array $people people
+	 */
+	function findForParentList($id) {
+	   return $this->find('list', 
+            array('fields' => array('id', 'name'),
+                'conditions' => array('id <>' => $id),
+                'order' => 'name',
+            ));
 	}
 	
 	/**

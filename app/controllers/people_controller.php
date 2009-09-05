@@ -17,6 +17,12 @@ class PeopleController extends AppController {
 		
 		//set the default layout to modalbox
 		$this->layout = 'popup';
+		
+		/**
+		 * set the javascript for the bsic links to open modalbox
+		 * This is not done on-the-fly, because that is very slow.
+		 */
+		$this->set('modalbox', 'Modalbox.show(this.href, {title: this.title, afterHide: function() {location.href = document.location}, width: 600, params: null, autoFocusing: true}); return false;');
 	}
 	
 	function index() {
@@ -32,13 +38,15 @@ class PeopleController extends AppController {
 		    $this->data['Person']['description'] = strip_tags($this->data['Person']['description'], '<a><b>');
 		    
 		    $this->Person->read(null, $this->Session->read('person'));
-			$this->Person->saveField('description', $this->data['Person']['description']);
-			$this->redirect(array('controller' => 'people', 'action' => 'view', 'id' => $this->Session->read('person')));
+			if ($this->Person->save($this->data, array('fieldList' => array('description', 'parent_id', 'born_intro', 'born_year', 'died_year', 'status')))) {
+			     $this->redirect(array('controller' => 'people', 'action' => 'view', 'id' => $this->Session->read('person')));
+			}
 		} else {
 		    $this->data = $this->Person->read(null, $this->Session->read('person'));
 		    //do not set ID in url
 		    unset($this->data['Person']['id']);
-		}
+        }
+		$this->set('people', $this->Person->findForParentList($this->Session->read('person')));
 	}
 	
 	//function to send the complain-mail
@@ -183,12 +191,7 @@ class PeopleController extends AppController {
 		} else {
     		$this->data = $this->Person->read(null, $id);
 		}
-		$this->set('people', $this->Person->find('list', 
-			array('fields' => array('id', 'name'),
-				'conditions' => array('id <>' => $id),
-				'order' => 'name',
-			)
-		));
+		$this->set('people', $this->Person->findForParentList($id));
 	}
 
 	function admin_delete($id = null) {

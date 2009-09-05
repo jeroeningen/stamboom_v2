@@ -27,20 +27,18 @@
 	echo $form->input('description', array('label' => 'Beschrijving')).'<br />';
 	
 	//fields only for admin
-	if (!empty($authUser) && $authUser['User']['username'] == 'admin') {
-		if (!empty($this->params['named']['parent_id'])) {
-			echo $form->hidden('parent_id', array('value' => $parent));
-		} else {
-			echo $form->label('Bojo');
-			echo $form->select('parent_id', $people, array('selected' => $parent)).'<br />';
-		}
-		echo $form->label('Geboren');
-        echo $form->select('born_intro', $intro);
-		echo $form->select('born_year', $years).'<br />';
-		echo $form->label('Overleden');
-		echo $form->select('died_year', $years).'<br />';
-		echo $form->input('status', array('options' => array('' => '', 'Lid' => 'Lid', 'Reunist' => 'Reunist', 'Overleden' => 'Overleden')));
+	if (!empty($this->params['named']['parent_id'])) {
+		echo $form->hidden('parent_id', array('value' => $parent));
+	} else {
+		echo $form->label('Bojo');
+		echo $form->select('parent_id', $people, array('selected' => $parent)).'<br />';
 	}
+	echo $form->label('Geboren');
+    echo $form->select('born_intro', $intro);
+	echo $form->select('born_year', $years).'<br />';
+	echo $form->label('Overleden');
+	echo $form->select('died_year', $years).'<br />';
+	echo $form->input('status', array('options' => array('' => '', 'Lid' => 'Lid', 'Reunist' => 'Reunist', 'Overleden' => 'Overleden')));
 ?>
 	</fieldset>
 <?php echo $form->end(array('value' => 'Verzend', 'id' => 'person_submit'));?>

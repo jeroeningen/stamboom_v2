@@ -31,12 +31,11 @@ if ($$('.modalbox_close').length > 0) {
 
 //bind modalbox to links in 'modalbox' itself
 if ($$('.modalbox_link').length > 0) {
-	bind_modalbox_links()
+    bind_modalbox_links()
 }
 
 //bind events to links on 'normal page'
 document.observe('dom:loaded', function() {
-	bind_modalbox_links()
 	if ($('picture_link') != null) {
 		$('picture_link').observe('click', function(e) {
 			Event.stop(e);
@@ -57,7 +56,9 @@ document.observe('dom:loaded', function() {
 	});
 });
 
-//Bind modalbox to links
+/** Bind modalbox to links
+ * Very slow function
+ */
 function bind_modalbox_links() {
 	if ($$('.modalbox_link').length > 0) {
 		for (i = 0; i < $$('.modalbox_link').length; i++) {
