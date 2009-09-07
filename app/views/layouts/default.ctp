@@ -9,8 +9,16 @@
 	<?php 
 	echo $html->css('liber');
 	if(isset($javascript)) {
+		
+		/**
+		 * we use a compressed version of it
 		echo $javascript->link('prototype.js');
 		echo $javascript->link('scriptaculous.js');
+		**/
+		
+		//compressed version of prototype and scriptaculous
+		echo $javascript->link('protoaculous.1.8.2.min.js');
+		
 		echo $javascript->link('prototip.js');
 		echo $javascript->link('modalbox.js');
         echo $javascript->link($this->name);
