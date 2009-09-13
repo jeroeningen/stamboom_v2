@@ -42,15 +42,6 @@ class Person extends AppModel {
 	);
 		
 	/**
-	 * TODO: sort jojo's on date of birth
-	 * find the data sorted for the tree
-	 * @return array $tree tree_data
-	 */
-	function findForTree() {
-	   return $this->find('all', array('fields' => array('id', 'name', 'description', 'picture', 'status','parent_id', 'lft', 'rght'), 'order' => 'lft ASC'));
-	}
-	
-	/**
 	 * find the person and it's parent
 	 * @param $id person_id
 	 * @return array $person person
@@ -129,7 +120,7 @@ class Person extends AppModel {
 	 */
 	function checkNotDied() {
 	   if ($this->data['Person']['status'] != 'Overleden' &&
-	      (!empty($this->data['Person']['died_year']) || 
+	      ($this->data['Person']['died_year'] > 0 || 
 	      !empty($this->data['Person']['died_intro']))) {
 	      return false;
 	   } else {

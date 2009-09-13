@@ -27,8 +27,18 @@ class PeopleController extends AppController {
 	
 	function index() {
 		$this->layout = 'default';
-		$this->Person->recursive = 0;
-		$this->set('people', $this->Person->findForTree());
+
+		//TODO: sort jojo's on date of birth
+		/**$children = $this->Person->children();
+		foreach ($children as $child) {
+		   $data = $this->Person->children(array(
+		      'id' => $child['Person']['id'],
+		      'direct' => true,
+		      'order' => 'born_year ASC, born_intro DESC')
+		   );
+		}**/
+		$this->Person->id = null;
+		$this->set('people', $this->Person->children());
 	}
 	
 	//edit action for forumuser (uses guest account)
@@ -143,8 +153,7 @@ class PeopleController extends AppController {
 
 	function admin_index() {
 		$this->layout = 'default';
-		$this->Person->recursive = 0;
-		$this->set('people', $this->Person->findForTree());
+		$this->set('people', $this->Person->children());
 	}
 
 	function admin_view($id = null) {

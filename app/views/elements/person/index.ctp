@@ -10,7 +10,7 @@
 ?>
 <div class="actions">
 	<ul>
-		<li><?php echo $html->link(__('Nieuwe Libertijn', true), array('action'=>'add', 'admin' => 1), array('class' => 'modalbox_link')); ?></li>
+		<li><?php echo $html->link(__('Nieuwe Libertijn', true), array('action'=>'add', 'admin' => 1), array('onclick' => $modalbox)); ?></li>
 	</ul>
 </div>
 <?php
