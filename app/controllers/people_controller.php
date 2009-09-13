@@ -81,19 +81,21 @@ class PeopleController extends AppController {
 	
 	//function to let the forumuser upload an image 
 	function upload() {
-		 if (!empty($this->data['Image']['picture']['name'])) {
-			//if image exists delete it
-			$person = $this->Person->read('picture', $this->Session->read('person'));
-		    if (!empty($person['Person']['picture'])) {
-				$this->__deleteImage($person['Person']['picture']);
-			}
-			$this->data['Person']['picture'] = $this->Image->upload_image_and_thumbnail($this->data,"picture",573,80,"people",true);
-			$this->Person->read(null, $this->Session->read('person'));
-			$this->Person->save($this->data);
-			$this->redirect(array('action' => 'index'));
-		}
-		
-		$this->data = $this->Person->read(null, $this->Session->read('person'));
+       //get the ID before save the data
+	   $person = $this->Person->read(null, $this->Session->read('person'));
+       if (!empty($this->data['Image']['picture']['name'])) {
+            //check if the picture has the right extension
+            if ($this->Person->save($this->data, array('validate' => 'only', 'fieldList' => array('picture')))) {
+      			//if image exists delete it
+      			if (!empty($person['Person']['picture'])) {
+      				$this->__deleteImage($person['Person']['picture']);
+      			}
+      			$person['Person']['picture'] = $this->Image->upload_image_and_thumbnail($this->data,"picture",573,80,"people",true);
+      			$this->Person->save($person);
+		    }
+		    $this->redirect(array('action' => 'index'));
+		 }
+		 $this->data['Person']['id'] = $person['Person']['id'];
 	}
 	
 	//function to let the forumuser delete his image 
@@ -152,8 +154,7 @@ class PeopleController extends AppController {
 	}
 
 	function admin_index() {
-		$this->layout = 'default';
-		$this->set('people', $this->Person->children());
+		$this->index();
 	}
 
 	function admin_view($id = null) {
@@ -245,18 +246,21 @@ class PeopleController extends AppController {
 			$this->redirect(array('action'=>'index'));
 		}
 		
-		if (!empty($this->data['Image']['picture']['name'])) {
-			$person = $this->Person->read('picture', $id);
-            //if image exists, delete it
-			if (!empty($person['Person']['picture'])) {
-            	$this->__deleteImage($person['Person']['picture']);
-			}
-			$this->data['Person']['picture'] = $this->Image->upload_image_and_thumbnail($this->data,"picture",573,80,"people",true);
-			$this->Person->read(null, $id);
-			$this->Person->save($this->data);
-			$this->redirect(array('action' => 'index'));
-		}
-		$this->data = $this->Person->read(null, $id);
+       //get the ID before save the data
+       $person = $this->Person->read(null, $id);
+       if (!empty($this->data['Image']['picture']['name'])) {
+            //check if the picture has the right extension
+            if ($this->Person->save($this->data, array('validate' => 'only', 'fieldList' => array('picture')))) {
+                //if image exists delete it
+                if (!empty($person['Person']['picture'])) {
+                    $this->__deleteImage($person['Person']['picture']);
+                }
+                $person['Person']['picture'] = $this->Image->upload_image_and_thumbnail($this->data,"picture",573,80,"people",true);
+                $this->Person->save($person);
+            }
+            $this->redirect(array('action' => 'index'));
+         }
+         $this->data['Person']['id'] = $person['Person']['id'];
 	}
 
 }

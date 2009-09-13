@@ -33,6 +33,10 @@ class Person extends AppModel {
                 'message' => 'De status moet \'overleden\' zijn als de overlijdensdatum is ingevuld'
             )
         ),
+        'picture' => array(
+            'rule' => 'checkPhotoExtension',
+            'message' => 'De foto moet in het formaat \'JPG\' zijn.'
+        ),
         'born_intro' => array(
 			'allowedChoice' => array(
 				'rule' => array('inList', array('', 'intro', 'na-intro')),
@@ -126,6 +130,21 @@ class Person extends AppModel {
 	   } else {
 	      return true;
 	   }
+    }
+    
+    /**
+     * Check if the file-extension is jpg
+     * @return boolean
+     */
+    function checkPhotoExtension() {
+       if (!empty($this->data['Image']['picture']['name'])) {
+          $path_info = pathinfo($this->data['Image']['picture']['name']);
+          if (strtolower($path_info['extension']) != 'jpg' && 
+            strtolower($path_info['extension']) != 'jpeg') {
+             return false;
+          }
+       }
+       return true;  
     }
 }
 ?>
