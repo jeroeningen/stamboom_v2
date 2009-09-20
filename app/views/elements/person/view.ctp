@@ -34,7 +34,7 @@
 				if ($person['Person']['died_year'] != 0000) {
 					echo $person['Person']['died_year'];
 				}  else {
-					echo "Nog lid / Reunist";
+					echo "Nog lid";
 				}
 			?>
 			&nbsp;
