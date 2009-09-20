@@ -30,7 +30,7 @@ class Person extends AppModel {
             ),
             'notDied' => array(
                 'rule' => 'checkNotDied',
-                'message' => 'De status moet \'overleden\' zijn als de overlijdensdatum is ingevuld'
+                'message' => 'De status moet \'overleden\' of \'reunist\' zijn als de overlijdensdatum is ingevuld'
             )
         ),
         'picture' => array(
@@ -123,7 +123,8 @@ class Person extends AppModel {
 	 * @return boolean
 	 */
 	function checkNotDied() {
-	   if ($this->data['Person']['status'] != 'Overleden' &&
+	   if (($this->data['Person']['status'] != 'Overleden' && 
+	       $this->data['Person']['status'] != 'Reunist') &&
 	      ($this->data['Person']['died_year'] > 0 || 
 	      !empty($this->data['Person']['died_intro']))) {
 	      return false;
