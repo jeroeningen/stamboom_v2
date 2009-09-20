@@ -22,6 +22,7 @@
     } else if ($data['Person']['status'] == 'Reunist') {
         $class = 'reunion';
     }
+    
     //display person link
     echo $html->link($data['Person']['name'], 
         array('controller' => 'people', 'action' => 'view', 'id' => $data['Person']['id']), 

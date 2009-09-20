@@ -51,12 +51,41 @@ class Person extends AppModel {
 	 * @return array $person person
 	 */
 	function findPersonParentChilds($id) {
-		$parent = $this->getparentnode($id);
+		//get the family of a person
+	    $parent = $this->getparentnode($id);
+	    if (!empty($parent)) {
+		      $grandparent = $this->getparentnode($parent['Person']['id']);
+		      $brothers = $this->children($parent['Person']['id'], true);
+	    } else {
+	          $grandparent = array();
+	          $brothers = array();
+	    }
 		$children = $this->children($id, true);
+		if (!empty($grandparent)) {
+		     $uncles = $this->children($grandparent['Person']['id'], true);
+		} else {
+		     $uncles = array();
+		}
+        
+		$cousins = array();
+		foreach ($uncles as $uncle) {
+		    if ($uncle['Person']['id'] != $parent['Person']['id']) {
+      		   $uncle_children = $this->children($uncle['Person']['id'], true);
+		       if (!empty($uncle_children)) {
+      		        $cousins = array_merge($cousins, $uncle_children);
+      		    }
+		    }
+        }
+        
+        //add all info to person
 		$person = $this->findById($id);
 		$person['Parent'] = $parent['Person'];
-		$person['Children'] = $children;
-		return $person;
+        $person['Grandparent'] = $grandparent['Person'];
+        $person['Brothers'] = $brothers;
+        $person['Uncles'] = $uncles;
+        $person['Cousins'] = $cousins;
+        $person['Children'] = $children;
+        return $person;
 	}
 	
 	/**

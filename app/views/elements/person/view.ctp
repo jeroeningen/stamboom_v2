@@ -42,19 +42,103 @@
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Bojo'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php 
-				echo $html->link($person['Parent']['name'], array('controller' => 'people', 'action' => 'view', 'id' => $person['Parent']['id']), array('class' => 'modalbox_link')); 
+                //if child is died or reunist set other link color
+                $status_class = '';
+                if ($person['Parent']['status'] == 'Overleden') {
+                    $status_class = 'died';
+                } else if ($person['Parent']['status'] == 'Reunist') {
+                    $status_class = 'reunion';
+                }
+				echo $html->link($person['Parent']['name'], array('controller' => 'people', 'action' => 'view', 'id' => $person['Parent']['id']), array('class' => 'modalbox_link '. $status_class)); 
 			?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Jojo\'s'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php 
-				foreach($person['Children'] as $child) {
-					echo $html->link($child['Person']['name'], array('controller' => 'people', 'action' => 'view', 'id' => $child['Person']['id']), array('class' => 'modalbox_link')).'<br />'; 
-				}
-				?>
-			&nbsp;
-		</dd>
+        <dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Jojo\'s'); ?></dt>
+        <dd<?php if ($i++ % 2 == 0) echo $class;?>>
+            <?php 
+                foreach($person['Children'] as $child) {
+                    //if child is died or reunist set other link color
+                    $status_class = '';
+                    if ($child['Person']['status'] == 'Overleden') {
+                        $status_class = 'died';
+                    } else if ($child['Person']['status'] == 'Reunist') {
+                        $status_class = 'reunion';
+                    }
+                    
+                    echo $html->link($child['Person']['name'], array('controller' => 'people', 'action' => 'view', 'id' => $child['Person']['id']), array('class' => 'modalbox_link '. $status_class)).'<br />'; 
+                }
+                ?>
+            &nbsp;
+        </dd>
+        <dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Broers en zussen'); ?></dt>
+        <dd<?php if ($i++ % 2 == 0) echo $class;?>>
+            <?php 
+                foreach($person['Brothers'] as $bro) {
+                    if ($bro['Person']['id'] != $person['Person']['id']) {
+                        //if brother is died or reunist set other link color
+                        $status_class = '';
+                        if ($bro['Person']['status'] == 'Overleden') {
+                            $status_class = 'died';
+                        } else if ($bro['Person']['status'] == 'Reunist') {
+                            $status_class = 'reunion';
+                        }
+                        
+                        echo $html->link($bro['Person']['name'], array('controller' => 'people', 'action' => 'view', 'id' => $bro['Person']['id']), array('class' => 'modalbox_link '. $status_class)).'<br />'; 
+                    }
+                }
+                ?>
+            &nbsp;
+        </dd>
+        <dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Opa / oma'); ?></dt>
+        <dd<?php if ($i++ % 2 == 0) echo $class;?>>
+            <?php 
+                //if grandparent is died or reunist set other link color
+                $status_class = '';
+                if ($person['Grandparent']['status'] == 'Overleden') {
+                    $status_class = 'died';
+                } else if ($person['Grandparent']['status'] == 'Reunist') {
+                    $status_class = 'reunion';
+                }
+                echo $html->link($person['Grandparent']['name'], array('controller' => 'people', 'action' => 'view', 'id' => $person['Grandparent']['id']), array('class' => 'modalbox_link '. $status_class)); 
+            ?>
+            &nbsp;
+        </dd>
+        <dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Ooms en tantes'); ?></dt>
+        <dd<?php if ($i++ % 2 == 0) echo $class;?>>
+            <?php 
+                foreach($person['Uncles'] as $uncle) {
+                    if ($uncle['Person']['id'] != $person['Parent']['id']) {
+                        //if uncle is died or reunist set other link color
+                        $status_class = '';
+                        if ($uncle['Person']['status'] == 'Overleden') {
+                            $status_class = 'died';
+                        } else if ($uncle['Person']['status'] == 'Reunist') {
+                            $status_class = 'reunion';
+                        }
+                        
+                        echo $html->link($uncle['Person']['name'], array('controller' => 'people', 'action' => 'view', 'id' => $uncle['Person']['id']), array('class' => 'modalbox_link '. $status_class)).'<br />';
+                    } 
+                }
+                ?>
+            &nbsp;
+        </dd>
+        <dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Neven en nichten'); ?></dt>
+        <dd<?php if ($i++ % 2 == 0) echo $class;?>>
+            <?php 
+                foreach($person['Cousins'] as $cousin) {
+                    //if cousin is died or reunist set other link color
+                    $status_class = '';
+                    if ($cousin['Person']['status'] == 'Overleden') {
+                        $status_class = 'died';
+                    } else if ($cousin['Person']['status'] == 'Reunist') {
+                        $status_class = 'reunion';
+                    }
+                    
+                    echo $html->link($cousin['Person']['name'], array('controller' => 'people', 'action' => 'view', 'id' => $cousin['Person']['id']), array('class' => 'modalbox_link '. $status_class)).'<br />';
+                }
+                ?>
+            &nbsp;
+        </dd>
 	</dl>
 </div>
 <?php
