@@ -25,7 +25,13 @@ a {
     color: blue;
 }
 
+/**
+ * different colors for members
+ **/
 a.died {
+    color: White;
+}
+a.reunion {
     color: Maroon;
 }
 

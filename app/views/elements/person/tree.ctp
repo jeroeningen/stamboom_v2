@@ -15,23 +15,34 @@
 		echo '<div class="link">';
 	}
 	
-	//if person is died set other link color and unset it for the next links
+	//if person is died or reunist set other link color
+    $class = '';
 	if ($data['Person']['status'] == 'Overleden') {
-        echo $html->link($data['Person']['name'], 
-            array('controller' => 'people', 'action' => 'view', 'id' => $data['Person']['id']), 
-            array('class' => 'died', 'onclick' => $modalbox)).'</div>';
-	} else {
-    	echo $html->link($data['Person']['name'], 
-    		array('controller' => 'people', 'action' => 'view', 'id' => $data['Person']['id']), 
-    		array('onclick' => $modalbox)).'</div>';
-	}
+        $class = 'died';
+    } else if ($data['Person']['status'] == 'Reunist') {
+        $class = 'reunion';
+    }
+    //display person link
+    echo $html->link($data['Person']['name'], 
+        array('controller' => 'people', 'action' => 'view', 'id' => $data['Person']['id']), 
+        array('class' => $class, 'onclick' => $modalbox));
+    
+    //display born year and died year
+    if ($data['Person']['born_year'] == 0) {
+        $data['Person']['born_year'] = '?';
+    }
+    if ($data['Person']['died_year'] == 0) {
+        $data['Person']['died_year'] = '?';
+    }
+    echo ' ' . $data['Person']['born_intro'] . ' ' . $data['Person']['born_year'] . 
+        ' - '. $data['Person']['died_year'] . '</div>';
 
 	if (!empty($data['Person']['description'])) {
 		echo '<div class="description">'.nl2br($data['Person']['description']).'</div>';
 	}
 	echo '</div>';
 	
-	//set links for admin
+	//display links for admin
 	if (!empty($authUser) && $authUser['User']['username'] == 'admin') {
 		echo '<div class="admin_bar">'.$html->link('Bewerk', array('controller' => 'people', 'action' => 'edit', 'id' => $data['Person']['id'], 'admin' => 1), array('onclick' => $modalbox)).' '.
 			$html->link('Voeg jojo toe', array('controller' => 'people', 'action' => 'add', 'parent_id' => $data['Person']['id'], 'admin' => 1), array('onclick' => $modalbox)).' '.

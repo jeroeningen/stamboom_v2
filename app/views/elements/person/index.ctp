@@ -1,7 +1,7 @@
 <div class="people index">
 <h2><?php __('Liber stamboom');?></h2>
 <?php
-	if(empty($people)) {
+    if(empty($people)) {
 		echo 'Sorry, nog geen leden aan de stamboom toegevoegd.';
 	} else {
 		echo $tree->generate($people, array('element' => 'person/tree', 'class' => 'tree'));
