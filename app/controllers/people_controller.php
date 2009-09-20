@@ -27,18 +27,10 @@ class PeopleController extends AppController {
 	
 	function index() {
 		$this->layout = 'default';
-
-		//TODO: sort jojo's on date of birth
-		/**$children = $this->Person->children();
-		foreach ($children as $child) {
-		   $data = $this->Person->children(array(
-		      'id' => $child['Person']['id'],
-		      'direct' => true,
-		      'order' => 'born_year ASC, born_intro DESC')
-		   );
-		}**/
-		$this->Person->id = null;
-		$this->set('people', $this->Person->children());
+        $this->Person->id = null;
+        
+		// sort jojo's on date of birth
+		$this->set('people', $this->Person->find('threaded', array('order' => 'born_year ASC, born_intro DESC')));
 	}
 	
 	//edit action for forumuser (uses guest account)
