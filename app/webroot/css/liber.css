@@ -21,13 +21,12 @@ div.admin_bar {
 	font-size: 60%;
 }
 
-a {
-    color: blue;
-}
-
 /**
  * different colors for members
  **/
+a {
+    color: blue;
+}
 a.died {
     color: White;
 }
@@ -47,6 +46,26 @@ div#logo, h2 {
     text-align: center;
 }
 
+img {
+    border: none;
+}
+
+div.person {
+    display: inline-block;
+}
+
+a.fold, a.children {
+	position: relative;
+}
+
+a.fold {
+    left: -16px;
+}
+
+a.children {
+    left: -8px;
+}
+
 /**
  * Modalbox & forms
  **/
@@ -54,6 +73,7 @@ label {
 	margin: 0 1em;
 	width: 8em;
 	display: inline-block;
+	vertical-align: top;
 }
 
 dd, input[type="text"], input[type="password"], textarea {
@@ -73,7 +93,7 @@ li, ul {
 } 
 
 ul.tree, ul.tree ul { 
-	background: url(../img/vline.png) repeat-y; 
+	background: url(../img/vline.png) repeat-y 4px 0; 
 	margin: 0; 
 	padding: 0; 
 }
@@ -84,13 +104,20 @@ ul.tree ul {
 
 ul.tree li { 
 	margin: 0; 
-	padding: 0 12px; 
+	padding: 0 16px; 
 	line-height: 20px; 
-	background: url(../img/node.png) no-repeat; 
+	background: url(../img/node.png) no-repeat 4px 0; 
 	color: #369; 
 	font-weight: bold; 
 }
 
 ul.tree li.last { 
-	background: #ff6600 url(../img/lastnode.png) no-repeat; 
-} 
+    background: #ff6600 url(../img/lastnode.png) no-repeat 4px 0; 
+}
+
+/**
+ * Fold / collapse tree
+ **/
+.nodisplay {
+    display: none;
+}

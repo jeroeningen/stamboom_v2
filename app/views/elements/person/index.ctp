@@ -1,6 +1,9 @@
 <div class="people index">
 <h2><?php __('Liber stamboom');?></h2>
 <?php
+    //link for folding / collapsing the whole tree
+    echo $html->link('Alles inklappen', '', array('id' => 'toggle_tree'));
+    
     if(empty($people)) {
 		echo 'Sorry, nog geen leden aan de stamboom toegevoegd.';
 	} else {

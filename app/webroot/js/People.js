@@ -49,10 +49,39 @@ document.observe('dom:loaded', function() {
 			}
 		});
 	}
+	
+	//collapse or fold whole tree
+	$('toggle_tree').observe('click', function(e) {
+        if ($('toggle_tree').text == 'Alles inklappen') {
+            $('toggle_tree').update('Alles uitklappen');
+            $('toggle_tree').next().select('ul').each(function(child) {
+                hideLeaf(child);
+            });
+        } else {
+            $('toggle_tree').update('Alles inklappen');
+            $('toggle_tree').next().select('ul').each(function(child) {
+                displayLeaf(child);
+            });
+        }
+        Event.stop(e);
+	});
+	
+	//collapse or fold a single leaf
+	$$('.fold').each(function(el) {
+	    el.observe('click', function(e) {
+	        toggleDisplay(el.up().up().next());
+	        Event.stop(e);
+	    });
+	});
 
 	//set class for last childnode in tree
 	$$('ul').each(function(list) {
-	    $($(list.immediateDescendants()).last()).addClassName('last');
+	    if ($($(list.immediateDescendants()).last()).classNames() == 'collapse') {
+            $($(list.immediateDescendants()).last()).removeClassName('collapse');
+	        $($(list.immediateDescendants()).last()).addClassName('lastcollapse');
+	    } else {
+	        $($(list.immediateDescendants()).last()).toggleClassName('last');
+	    }
 	});
 });
 
@@ -68,4 +97,26 @@ function bind_modalbox_links() {
 			});
 		}
 	}
+}
+
+function toggleDisplay(el) {
+   if (el.hasClassName('nodisplay')) {
+       displayLeaf(el);
+   } else {
+       hideLeaf(el);
+   }
+}
+
+//hide a single leaf
+function hideLeaf(el) {
+    el.addClassName('nodisplay');
+    img = el.previous().select('img')[0];
+    img.writeAttribute('src', img.src.replace('collapse', 'fold'));
+}
+
+//display a single leaf
+function displayLeaf(el) {
+    el.removeClassName('nodisplay');
+    img = el.previous().select('img')[0];
+    img.writeAttribute('src', img.src.replace('fold', 'collapse'));
 }

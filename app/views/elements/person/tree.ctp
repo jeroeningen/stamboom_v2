@@ -1,7 +1,6 @@
 <?php
-	$tree->addItemAttribute('class', 'leaf');
-	echo '<div class="person">';
-	
+    echo '<div class="person">';
+    
 	//create the tooltip if a picture is set
 	if(!empty($data['Person']['picture'])) {
     	echo '<div class="link"
@@ -15,12 +14,21 @@
 		echo '<div class="link">';
 	}
 	
+	//create link for explorer structure
+	if (!empty($data['children'])) {
+        echo $html->link($html->image('collapse.png'), '', array('escape' => false, 'class' => 'fold'));
+    }    
+	
 	//if person is died or reunist set other link color
     $class = '';
 	if ($data['Person']['status'] == 'Overleden') {
-        $class = 'died';
+        $class .= 'died';
     } else if ($data['Person']['status'] == 'Reunist') {
-        $class = 'reunion';
+        $class .= 'reunion';
+    }
+
+    if (!empty($data['children'])) {
+        $class .= ' children';
     }
     
     //display person link
