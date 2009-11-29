@@ -1,4 +1,11 @@
 <?php
+    //Check if browser is IE6 or IE7
+    if (strstr($_SERVER['HTTP_USER_AGENT'], 'MSIE 6') || strstr($_SERVER['HTTP_USER_AGENT'], 'MSIE 7')) {
+        $ie = true;
+    } else {
+        $ie = false;
+    }
+
     echo '<div class="person">';
     
 	//create the tooltip if a picture is set
@@ -15,10 +22,10 @@
 	}
 	
 	//create link for explorer structure
-	if (!empty($data['children'])) {
-        echo $html->link($html->image('collapse.png'), '', array('escape' => false, 'class' => 'fold'));
-    }    
-	
+	if (!empty($data['children']) && !$ie) {
+           echo $html->link($html->image('collapse.png'), '', array('escape' => false, 'class' => 'fold'));
+    }
+    
 	//if person is died or reunist set other link color
     $class = '';
 	if ($data['Person']['status'] == 'Overleden') {
@@ -27,7 +34,7 @@
         $class .= 'reunion';
     }
 
-    if (!empty($data['children'])) {
+    if (!empty($data['children']) && !$ie) {
         $class .= ' children';
     }
     

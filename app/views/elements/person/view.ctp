@@ -92,14 +92,16 @@
         <dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Opa / oma'); ?></dt>
         <dd<?php if ($i++ % 2 == 0) echo $class;?>>
             <?php 
-                //if grandparent is died or reunist set other link color
-                $status_class = '';
-                if ($person['Grandparent']['status'] == 'Overleden') {
-                    $status_class = 'died';
-                } else if ($person['Grandparent']['status'] == 'Reunist') {
-                    $status_class = 'reunion';
-                }
-                echo $html->link($person['Grandparent']['name'], array('controller' => 'people', 'action' => 'view', 'id' => $person['Grandparent']['id']), array('class' => 'modalbox_link '. $status_class)); 
+                if ($person['Grandparent'] != '') {
+                    //if grandparent is died or reunist set other link color
+                    $status_class = '';
+                    if ($person['Grandparent']['status'] == 'Overleden') {
+                        $status_class = 'died';
+                    } else if ($person['Grandparent']['status'] == 'Reunist') {
+                        $status_class = 'reunion';
+                    }
+                    echo $html->link($person['Grandparent']['name'], array('controller' => 'people', 'action' => 'view', 'id' => $person['Grandparent']['id']), array('class' => 'modalbox_link '. $status_class));
+                } 
             ?>
             &nbsp;
         </dd>

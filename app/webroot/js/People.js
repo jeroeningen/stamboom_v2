@@ -51,20 +51,22 @@ document.observe('dom:loaded', function() {
 	}
 	
 	//collapse or fold whole tree
-	$('toggle_tree').observe('click', function(e) {
-        if ($('toggle_tree').text == 'Alles inklappen') {
-            $('toggle_tree').update('Alles uitklappen');
-            $('toggle_tree').next().select('ul').each(function(child) {
-                hideLeaf(child);
-            });
-        } else {
-            $('toggle_tree').update('Alles inklappen');
-            $('toggle_tree').next().select('ul').each(function(child) {
-                displayLeaf(child);
-            });
-        }
-        Event.stop(e);
-	});
+	if ($('toggle_tree') != null) {
+    	$('toggle_tree').observe('click', function(e) {
+            if ($('toggle_tree').text == 'Alles inklappen') {
+                $('toggle_tree').update('Alles uitklappen');
+                $('toggle_tree').next().select('ul').each(function(child) {
+                    hideLeaf(child);
+                });
+            } else {
+                $('toggle_tree').update('Alles inklappen');
+                $('toggle_tree').next().select('ul').each(function(child) {
+                    displayLeaf(child);
+                });
+            }
+            Event.stop(e);
+    	});
+	}
 	
 	//collapse or fold a single leaf
 	$$('.fold').each(function(el) {

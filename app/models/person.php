@@ -80,7 +80,7 @@ class Person extends AppModel {
         //add all info to person
 		$person = $this->findById($id);
 		$person['Parent'] = $parent['Person'];
-        $person['Grandparent'] = $grandparent['Person'];
+        $person['Grandparent'] = (!empty($grandparent['Person']) ? $grandparent['Person'] : '');
         $person['Brothers'] = $brothers;
         $person['Uncles'] = $uncles;
         $person['Cousins'] = $cousins;
