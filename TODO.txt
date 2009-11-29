@@ -1,7 +1,0 @@
-- verder met tooltip, breedte en kleur
-- email TOM
-- uitgebreid overzicht persoon
-- commentaar Erik & Mitnick
-- DONE: commentaar CJ en Tom
-- sort of DONE: probleem ALS session expired
-- DONE: reload als buiten modalbox clicked (nu diabled)
