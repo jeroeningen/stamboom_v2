@@ -24,7 +24,7 @@ class PeopleController extends AppController {
 		 * This is not done on-the-fly, because that is very slow.
 		 */
 	    $this->set('edit_modalbox', 'Modalbox.show(this.href, {title: this.title, afterHide: function() {location.href = document.location}, width: 600, params: null, autoFocusing: true}); return false;');
-        $this->set('modalbox', 'Modalbox.show(this.href, {title: this.title, width: 600, params: null, autoFocusing: true, afterLoad: function() {$(\'MB_window\').style.height = \'100%\';$(\'MB_window\').style.overflow = \'auto\';}}); return false;');
+        $this->set('modalbox', 'Modalbox.show(this.href, {title: this.title, width: 600, params: null, autoFocusing: true, afterLoad: function() {$(\'MB_window\').style.height = \'80%\';$(\'MB_window\').style.overflow = \'auto\';}}); return false;');
 	}
 	
 	function index() {
