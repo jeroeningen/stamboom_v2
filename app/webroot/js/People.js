@@ -95,7 +95,7 @@ function bind_modalbox_links() {
 		for (i = 0; i < $$('.modalbox_link').length; i++) {
 			$$('.modalbox_link')[i].observe('click', function(e) {
 				Event.stop(e);
-				Modalbox.show(this.href, {title: this.title, afterHide: function() {location.href = document.location}, width: 600, params: null, autoFocusing: true});
+				Modalbox.show(this.href, {title: this.title, width: 600, params: null, autoFocusing: true, afterLoad: function() {$('MB_window').style.height = '80%';$('MB_window').style.overflow = 'auto';}});
 			});
 		}
 	}
