@@ -15,7 +15,7 @@
 ?>
 <div class="actions">
 	<ul>
-		<li><?php echo $html->link(__('Nieuwe Libertijn', true), array('action'=>'add', 'admin' => 1), array('onclick' => $modalbox)); ?></li>
+		<li><?php echo $html->link(__('Nieuwe Libertijn', true), array('action'=>'add', 'admin' => 1), array('onclick' => $edit_modalbox)); ?></li>
 	</ul>
 </div>
 <?php

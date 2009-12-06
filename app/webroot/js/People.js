@@ -24,7 +24,7 @@ if ($$('.modalbox_close').length > 0) {
 	for (i = 0; i < $$('.modalbox_close').length; i++) {
 		$$('.modalbox_close')[i].observe('click', function(e) {
 			Event.stop(e);
-			Modalbox.hide({afterHide: function() { location.href = document.location; } });
+			Modalbox.hide();
 		});
 	}
 }

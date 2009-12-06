@@ -20,9 +20,11 @@ class PeopleController extends AppController {
 		
 		/**
 		 * set the javascript for the bsic links to open modalbox
+		 * Only when user is edited, the page will be refeshed.
 		 * This is not done on-the-fly, because that is very slow.
 		 */
-		$this->set('modalbox', 'Modalbox.show(this.href, {title: this.title, afterHide: function() {location.href = document.location}, width: 600, params: null, autoFocusing: true}); return false;');
+	    $this->set('edit_modalbox', 'Modalbox.show(this.href, {title: this.title, afterHide: function() {location.href = document.location}, width: 600, params: null, autoFocusing: true}); return false;');
+        $this->set('modalbox', 'Modalbox.show(this.href, {title: this.title, width: 600, params: null, autoFocusing: true, afterLoad: function() {$(\'MB_window\').style.height = \'100%\';$(\'MB_window\').style.overflow = \'auto\';}}); return false;');
 	}
 	
 	function index() {
